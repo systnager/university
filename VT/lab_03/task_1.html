@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Відеоплеєр та аудіоплеєр</title>
+</head>
+<body>
+
+<video controls loop muted preload="auto">
+    <source src="IMG_5915.MOV" type="video/mp4">
+    Ваш браузер не підтримує відео тег.
+</video>
+
+<audio id="myAudio" controls loop muted preload="auto">
+    <source src="Caravan%20Palace%20–%20Lone%20Digger%20—%20копия.mp3" type="audio/mp3">
+    Ваш браузер не підтримує аудіо тег.
+</audio>
+
+<div>
+    <button onclick="changeTrack('There%20For%20Tomorrow%20-%20Sore%20Winner.mp3')">Трек 1</button>
+    <button onclick="changeTrack('С.К.А.Й.%20-%20Best%20Друг.mp3')">Трек 2</button>
+</div>
+
+<script>
+    function changeTrack(trackSrc) {
+        const audio = document.getElementById("myAudio");
+        audio.src = trackSrc;
+        audio.load();
+        audio.play();
+    }
+</script>
+
+</body>
+</html>
