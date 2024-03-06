@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-21 05:35:34 "/>
+        <attribute name="created" value="dXNlcjtERVNLVE9QLU1JODdPT0k7MjAyMy0xMS0xNjsiMTA6NTk6MTggIjsyNzE3"/>
+        <attribute name="edited" value="dXNlcjtERVNLVE9QLU1JODdPT0k7MjAyMy0xMS0xNzsiMTI6MTI6NTYgIjsyOzI4MjA="/>
+        <attribute name="edited" value="c3lzdG47REVTS1RPUC1NSTg3T09JOzIwMjMtMTEtMjE7IjA1OjM1OjM0ICI7MTsyOTQ3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+    <function name="&#1055;&#1086;&#1095;&#1072;&#1090;&#1086;&#1082;" type="None" variable="">
+        <parameters/>
+        <body>
+            <assign variable="ROWS" expression="5"/>
+            <assign variable="COLS" expression="5"/>
+            <declare name="b[ROWS][COLS]" type="Real" array="False" size=""/>
+            <output expression="printf(&quot;&#1055;&#1086;&#1095;&#1072;&#1090;&#1082;&#1086;&#1074;&#1080;&#1081; &#1084;&#1072;&#1089;&#1080;&#1074; b (&#1074;&#1080;&#1087;&#1072;&#1076;&#1082;&#1086;&#1074;&#1110; &#1095;&#1080;&#1089;&#1083;&#1072; &#1074;&#1110;&#1076; 0 &#1076;&#1086; 9):\n&quot;)" newline="True"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt; ROWS">
+                <assign variable="j" expression="0"/>
+                <while expression="j &lt; COLS">
+                    <assign variable="b[i][j]" expression="(double)(rand() % 10)"/>
+                    <output expression="printf(&quot;%.2lf &quot;, b[i][j])" newline="True"/>
+                    <assign variable="j" expression="j + 1"/>
+                </while>
+                <output expression="printf(&quot;\n&quot;)" newline="True"/>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <assign variable="max_element" expression="b[0][0]"/>
+            <assign variable="max_i" expression="0"/>
+            <assign variable="max_j" expression="0"/>
+            <while expression="i &lt; ROWS">
+                <assign variable="j" expression="0"/>
+                <while expression="j &lt; COLS">
+                    <if expression="b[i][j] &gt; max_element">
+                        <then>
+                            <assign variable="max_element" expression="b[i][j]"/>
+                            <assign variable="max_i" expression="i"/>
+                            <assign variable="max_j" expression="j"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <assign variable="j" expression="j + 1"/>
+                </while>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <output expression="printf(&quot;\n&#1052;&#1072;&#1082;&#1089;&#1080;&#1084;&#1072;&#1083;&#1100;&#1085;&#1080;&#1081; &#1077;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;: %.2lf, &#1110;&#1085;&#1076;&#1077;&#1082;&#1089;&#1080;: [%d][%d]\n&quot;, max_element, max_i, max_j)" newline="True"/>
+            <while expression="j &lt; COLS">
+                <if expression="b[i][j] &lt; min_element">
+                    <then>
+                        <assign variable="min_element" expression="b[i][j]"/>
+                        <assign variable="min_i" expression="i"/>
+                        <assign variable="min_j" expression="j"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="j" expression="j + 1"/>
+            </while>
+            <assign variable="i" expression="i + 1"/>
+            <output expression="printf(&quot;&#1052;&#1110;&#1085;&#1110;&#1084;&#1072;&#1083;&#1100;&#1085;&#1080;&#1081; &#1077;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;: %.2lf, &#1110;&#1085;&#1076;&#1077;&#1082;&#1089;&#1080;: [%d][%d]\n&quot;, min_element, min_i, min_j);" newline="True"/>
+            <output expression="printf(&quot;&#1057;&#1077;&#1088;&#1077;&#1076;&#1085;&#1100;&#1086;&#1072;&#1088;&#1080;&#1092;&#1084;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1085;&#1103; &#1077;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1110;&#1074; &#1082;&#1086;&#1078;&#1085;&#1086;&#1075;&#1086; &#1088;&#1103;&#1076;&#1082;&#1072;:\n&quot;)" newline="True"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt; ROWS">
+                <assign variable="i" expression="i + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

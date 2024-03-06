@@ -1,0 +1,3 @@
+﻿  task_4.c
+D:\University\OP\lab_14\task_4\task_4.c(16,11): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+  task_4.vcxproj -> D:\University\OP\lab_14\x64\Debug\task_4.exe

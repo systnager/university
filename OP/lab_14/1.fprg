@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-21 05:22:46 "/>
+        <attribute name="created" value="dXNlcjtERVNLVE9QLU1JODdPT0k7MjAyMy0xMS0xNjsiMTA6NTk6MTggIjsyNzE3"/>
+        <attribute name="edited" value="dXNlcjtERVNLVE9QLU1JODdPT0k7MjAyMy0xMS0xNzsiMTI6MTI6NTYgIjsyOzI4MjA="/>
+        <attribute name="edited" value="c3lzdG47REVTS1RPUC1NSTg3T09JOzIwMjMtMTEtMjE7IjA1OjIyOjQ2ICI7MTsyOTQ2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+    <function name="&#1055;&#1086;&#1095;&#1072;&#1090;&#1086;&#1082;" type="None" variable="">
+        <parameters/>
+        <body>
+            <assign variable="ROWS" expression="5"/>
+            <assign variable="COLS" expression="5"/>
+            <declare name="matrix" type="Integer" array="True" size="ROWS][COLS"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt; ROWS">
+                <assign variable="j" expression="0"/>
+                <while expression="j &lt; COLS">
+                    <assign variable="matrix[i][j]" expression="2 * i * j - i"/>
+                    <assign variable="j" expression="j + 1"/>
+                </while>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <while expression="i &lt; ROWS">
+                <assign variable="j" expression="0"/>
+                <while expression="j &lt; COLS">
+                    <output expression="printf(&quot;%4d &quot;, matrix[i][j])" newline="True"/>
+                    <assign variable="j" expression="j + 1"/>
+                </while>
+                <output expression="printf(&quot;\n&quot;)" newline="True"/>
+                <assign variable="i" expression="i + 1"/>
+            </while>
+            <assign variable="product" expression="1"/>
+            <assign variable="j" expression="0"/>
+            <while expression="j &lt; COLS">
+                <assign variable="product" expression="product * (matrix[4][j])"/>
+                <assign variable="j" expression="j + 1"/>
+            </while>
+            <output expression="printf(&quot;\n&#1044;&#1086;&#1073;&#1091;&#1090;&#1086;&#1082; &#1077;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1110;&#1074; &#1087;'&#1103;&#1090;&#1086;&#1075;&#1086; &#1088;&#1103;&#1076;&#1082;&#1072;: %d\n&quot;, product)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

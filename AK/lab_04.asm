@@ -1,0 +1,11 @@
+RD #5
+WR R3
+RD #12
+WR R4
+RD #55
+
+SUB R3
+ADD R4
+WR R9
+WR 50
+HLT

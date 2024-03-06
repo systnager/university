@@ -1,0 +1,174 @@
+CALL CLDISP
+CALL CLKB
+
+RD #500 ;Початок масиву
+WR R0
+RD #0
+WR R1 ;Для підрахунку, яке це число по рахунку
+RD #3
+WR R2 ;Лічильник для циклу
+M: RD R1
+SUB #12
+JZ SECOND_STEP
+IN 2
+JZ M
+IN 0
+WR R3 ;Натиснута клавіша
+OUT 10
+CALL CLKB
+RD R2
+SUB #3
+JZ N100
+RD R2
+SUB #2
+JZ N10
+RD R2
+SUB #1
+JZ N1
+
+N100: RD R0;Для запису цифри сотень
+ADD R1
+WR R4 ;Адреса для поточного числа
+RD R3
+SUB #48
+MUL #100
+WR @R4
+RD R2
+SUB #1
+WR R2
+JMP M
+
+N10: RD R3;Для запису цифри десятків
+SUB #48
+MUL #10
+WR R5 ;Для тимчасового збереження десятка
+RD @R4
+ADD R5
+WR @R4
+RD R2
+SUB #1
+WR R2
+JMP M
+
+N1: RD R3;Для запису цифри одиниць
+SUB #48
+WR R5 ;Для тимчасового збереження одиниці
+RD @R4
+ADD R5
+WR @R4
+RD #3
+WR R2
+RD R1
+ADD #1
+WR R1
+CALL SLEEP10
+CALL CLDISP
+JMP M
+
+SECOND_STEP: RD #0
+WR R2 ;Лічильник для циклу
+RD #0
+WR R9 ;Кількість парних чисел
+ASD: RD R2
+SUB #12
+JZ OUTPUT_RESULT
+RD R0
+ADD R2
+WR R5 ;Адреса числа
+RD @R5
+DIV #2
+WR R8 ;Половина числа
+ADD R8
+SUB @R5
+JS END_LOOP
+RD R9
+ADD #1
+WR R9
+END_LOOP: RD R2
+ADD #1
+WR R2
+JMP ASD
+
+CALL END_LOOP
+
+
+
+OUTPUT_RESULT: RD R9
+DIV #100
+MUL #100
+WR R0
+RD R9
+SUB R0
+DIV #10
+MUL #10
+WR R1
+RD R9
+SUB R1
+SUB R0
+WR R2
+JMP PRINTRESULT
+
+SLEEP10: RD #10
+OUT 21
+RDI 25101
+OUT 22
+M11: IN 20
+JZ M11
+RD #101
+OUT 20
+RET
+
+SLEEP30: RD #30
+OUT 21
+RDI 25101
+OUT 22
+X11: IN 20
+JZ X11
+RD #101
+OUT 20
+RET
+
+PRINTRESULT: CALL CLDISP
+CALL CLKB
+RD #82 ;R
+OUT 10
+RD #101 ;e
+OUT 10
+RD #115 ;s
+OUT 10
+RD #117 ;u
+OUT 10
+RD #108 ;l
+OUT 10
+RD #116 ;t
+OUT 10
+RD #58 ;:
+OUT 10
+RD #95 ;_
+OUT 10
+RD R0
+ADD #48
+OUT 10
+RD R1
+ADD #48
+OUT 10
+RD R2
+ADD #48
+OUT 10
+HLT
+
+CLDISP: RD #101
+OUT 11
+RD #102
+OUT 11
+RD #011
+OUT 11
+RET
+
+CLKB: RD #10
+OUT 1
+RD #101
+OUT 1
+RD #103
+OUT 1
+RET
