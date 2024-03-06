@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        #tb4, #tb4 td {
+            border: 1px solid green;
+        }
+
+        #tb5, #tb5 td, #tb5 th {
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        #tb6, #tb6 td, th {
+            border: 3px double gray;
+        }
+
+        #tb7, #tb7 td, th {
+            border: none;
+        }
+
+        .invisible-text {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        #tb8, #tb8 td, #tb8 th {
+            border: black 1px solid;
+        }
+    </style>
+</head>
+<body>
+<h2>Table 1</h2>
+<table>
+    <tr>
+        <td colspan="2">Комірка 1</td>
+        <td>Комірка 3</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Комірка 4</td>
+        <td>Комірка 5</td>
+        <td>Комірка 6</td>
+    </tr>
+    <tr>
+        <td>Комірка 8</td>
+        <td>Комірка 9</td>
+    </tr>
+</table>
+<br>
+<h2>Table 2</h2>
+<table>
+    <tr>
+        <td rowspan="3">Комірка 1</td>
+        <td>Комірка 2</td>
+        <td rowspan="3">Комірка 3</td>
+    </tr>
+    <tr>
+        <td>Комірка 5</td>
+    </tr>
+    <tr>
+        <td>Комірка 8</td>
+    </tr>
+</table>
+<br>
+<h2>Table 3</h2>
+<table>
+    <tr>
+        <td colspan="3">Комірка 1</td>
+    </tr>
+    <tr>
+        <td>Комірка 4</td>
+        <td rowspan="2">Комірка 5</td>
+        <td>Комірка 6</td>
+    </tr>
+    <tr>
+        <td>Комірка 8</td>
+        <td>Комірка 9</td>
+    </tr>
+</table>
+<br>
+<h2>Table 4</h2>
+<table id="tb4">
+    <tr>
+        <td rowspan="3">1111</td>
+        <td colspan="2">22222</td>
+        <td colspan="2">33333</td>
+    </tr>
+    <tr>
+        <td>4444</td>
+        <td rowspan="2" colspan="2">5555</td>
+        <td>6666</td>
+    </tr>
+    <tr>
+        <td>7777</td>
+        <td>8888</td>
+    </tr>
+    <tr>
+        <td colspan="5">9999</td>
+    </tr>
+</table>
+<br>
+<h2>Table 5</h2>
+<table id="tb5">
+    <tr>
+        <th colspan="2" rowspan="2">Номер</th>
+        <th colspan="4">теги</th>
+    </tr>
+    <tr>
+        <th>тег</th>
+        <th>значення</th>
+    </tr>
+    <tr>
+        <td colspan="2">1</td>
+        <td>p</td>
+        <td rowspan="4"><span style="border-bottom: blue 3px double">для тексту</span></td>
+    </tr>
+    <tr>
+        <td colspan="2">2</td>
+        <td>a</td>
+    </tr>
+    <tr>
+        <td colspan="2">3</td>
+        <td>b</td>
+    </tr>
+    <tr>
+        <td colspan="2">4</td>
+        <td>i</td>
+    </tr>
+    <tr>
+        <td colspan="2">5</td>
+        <td>table</td>
+        <td>таблиця</td>
+    </tr>
+    <tr>
+        <td colspan="2">6</td>
+        <td>tr</td>
+        <td>рядок таблиці</td>
+    </tr>
+</table>
+<br>
+<h2>Table 6</h2>
+<table id="tb6">
+    <tr>
+        <td colspan="2" rowspan="3"><p class="invisible-text">Це невидимий текст</p></td>
+        <td colspan="2"><p class="invisible-text">Це невидимий текст</p></td>
+        <td><p class="invisible-text">Це невидимий текст</p></td>
+    </tr>
+    <tr>
+        <td colspan="3"><p class="invisible-text">Це невидимий текст</p></td>
+    </tr>
+    <tr>
+        <td rowspan="3"><p class="invisible-text">Це невидимий текст</p></td>
+        <td><p class="invisible-text">Це невидимий текст</p></td>
+        <td><p class="invisible-text">Це невидимий текст</p></td>
+    </tr>
+    <tr>
+        <td><p class="invisible-text">Це невидимий текст</p></td>
+        <td rowspan="2"><p class="invisible-text">Це невидимий текст</p></td>
+        <td rowspan="2" colspan="2"><p class="invisible-text">Це невидимий текст</p></td>
+    </tr>
+    <tr>
+        <td><p class="invisible-text">Це невидимий текст</p></td>
+    </tr>
+</table>
+<br>
+<h2>Table 7</h2>
+<div>
+    <h1 style="text-align: center">Хімічні елементи</h1>
+    <hr>
+    <table id="tb7">
+        <tr>
+            <th>Номер</th>
+            <th>Назва</th>
+            <th>Символ</th>
+            <th>Рік</th>
+            <th>Стаття</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><a href="#">Водень</a></td>
+            <td>He</td>
+            <td>1766</td>
+            <td><img src="2024-03-06_22-04.png" alt="article"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="#">Гелій</a></td>
+            <td>H</td>
+            <td>1895</td>
+            <td><img src="2024-03-06_22-04.png" alt="article"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="#">Бор</a></td>
+            <td>B</td>
+            <td>1808</td>
+            <td><img src="2024-03-06_22-04.png" alt="article"></td>
+        </tr>
+    </table>
+    <hr>
+    <p><i><span style="color: red;">**</span>У цьому завданні використано теги: table, tr, td, th, caption, h2, br,
+        small, ins</i></p>
+</div>
+<br>
+<h2>Table 8</h2>
+<table id="tb8">
+    <colgroup>
+        <col style="background-color: gray;">
+        <col style="background-color: gray;">
+        <col style="background-color: green;">
+        <col style="background-color: red;">
+        <col style="background-color: white;">
+        <col style="background-color: purple;">
+        <col style="background-color: blue;">
+    </colgroup>
+    <tr>
+        <th>№</th>
+        <th>Назва</th>
+        <th>Ціна, грн</th>
+        <th>перша колонка</th>
+        <th>друга колонка</th>
+        <th>третя колонка</th>
+        <th>четверта колонка</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Олівець</td>
+        <td>35</td>
+        <td>1111</td>
+        <td>2222</td>
+        <td>3333</td>
+        <td>4444</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Лінійка 20см</td>
+        <td>25</td>
+        <td>5555</td>
+        <td>6666</td>
+        <td>7777</td>
+        <td>8888</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>33</td>
+        <td>350</td>
+        <td>9999</td>
+        <td>0000</td>
+        <td>1111</td>
+        <td>2222</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>44</td>
+        <td>335</td>
+        <td>3333</td>
+        <td>4444</td>
+        <td>5555</td>
+        <td>6666</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>55</td>
+        <td>315</td>
+        <td>7777</td>
+        <td>8888</td>
+        <td>9999</td>
+        <td>0000</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>66</td>
+        <td>345</td>
+        <td>1111</td>
+        <td>2222</td>
+        <td>3333</td>
+        <td>4444</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>77</td>
+        <td>735</td>
+        <td>5555</td>
+        <td>6666</td>
+        <td>7777</td>
+        <td>8888</td>
+    </tr>
+</table>
+</body>
+</html>
