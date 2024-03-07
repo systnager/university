@@ -91,3 +91,20 @@ td {
 ul.hover-list li:nth-child(odd):hover {
     background-color: lightblue;
 }
+
+
+a[target="_blank"] {
+    color: blue;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a[target="_blank"]:hover {
+    color: red;
+}
+
+a[target="_blank"]:hover::after {
+    content: ' (відкриється в новому вікні)';
+    font-size: 12px;
+    color: gray;
+}
