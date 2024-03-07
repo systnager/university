@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета відвідувача ресторану</title>
+</head>
+<body>
+
+<form action="#" method="post">
+
+    <fieldset>
+        <legend>Основна інформація</legend>
+
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" required placeholder="Ваше ім'я">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required autocomplete="off" placeholder="example@example.com">
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Наприклад, 1234567890">
+
+        <label for="dob">Дата народження:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="guests">Кількість гостей:</label>
+        <input type="number" id="guests" name="guests" min="1" required>
+
+        <label for="rating">Оцінка ресторану (від 1 до 10):</label>
+        <input type="range" id="rating" name="rating" min="1" max="10" oninput="output.value = rating.value">
+        <output id="output">5</output>
+
+        <label>Стать:</label>
+        <label for="choice1"><input type="radio" id="choice1" name="choice" checked> Чоловіча</label>
+        <label for="choice2"><input type="radio" id="choice2" name="choice">Жіноча</label>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Вибір страви</legend>
+
+        <label for="dish">Оберіть страву:</label>
+        <select id="dish" name="dish" required>
+            <option value="pizza">Піца</option>
+            <option value="pasta" selected>Паста</option>
+            <option value="salad">Салат</option>
+        </select>
+
+        <label for="extras">Додаткові інгредієнти (можна обрати кілька):</label>
+        <select id="extras" name="extras" multiple required>
+            <option value="cheese">Сир</option>
+            <option value="tomatoes">Помідори</option>
+            <option value="olives">Оливки</option>
+        </select>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Ваш відгук</legend>
+
+        <label for="feedback">Ваш відгук:</label>
+        <textarea id="feedback" name="feedback" rows="4" spellcheck="false" placeholder="Ваш відгук"></textarea>
+
+        <label for="upload">Завантажити фото:</label>
+        <input type="file" id="upload" name="upload" multiple>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Інше</legend>
+
+        <label for="readonlyField">Текстове поле доступне лише для читання:</label>
+        <input type="text" id="readonlyField" name="readonlyField" readonly value="Це поле лише для читання">
+
+        <label for="disabledField">Заблоковане текстове поле:</label>
+        <input type="text" id="disabledField" name="disabledField" disabled placeholder="Заблоковане поле">
+
+        <label for="regexField">Текстове поле з регулярним виразом:</label>
+        <input type="text" id="regexField" name="regexField" pattern="[A-Z]{3}\d{3}" placeholder="ABC123">
+
+        <label for="emailField">Поле email без автозаповнення:</label>
+        <input type="email" id="emailField" name="emailField" autocomplete="off" placeholder="example@example.com">
+
+        <label for="textareaNoSpellcheck">Textarea без перевірки орфографії:</label>
+        <textarea id="textareaNoSpellcheck" name="textareaNoSpellcheck" rows="4" spellcheck="false" placeholder="Ваш текст"></textarea>
+
+        <label for="textWithDatalist">Текстове поле з випадаючим списком:</label>
+        <input type="text" id="textWithDatalist" name="textWithDatalist" list="datalistOptions" placeholder="Виберіть опцію">
+        <datalist id="datalistOptions">
+            <option value="Опція 1">
+            <option value="Опція 2">
+            <option value="Опція 3">
+        </datalist>
+
+    </fieldset>
+
+    <label for="fileUpload">Завантаження файлу:</label>
+    <input type="file" id="fileUpload" name="fileUpload" multiple>
+
+    <button type="reset">Очистити форму</button>
+    <button type="submit">Надіслати</button>
+
+</form>
+
+</body>
+</html>
