@@ -88,3 +88,6 @@ td {
     padding: 15px;
 }
 
+ul.hover-list li:nth-child(odd):hover {
+    background-color: lightblue;
+}
