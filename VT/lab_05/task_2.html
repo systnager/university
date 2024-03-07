@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація користувача</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Реєстрація</h1>
+<form action="#">
+    <label for="username">Ім'я користувача:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <label for="age">Вік:</label>
+    <input type="number" id="age" name="age" required>
+    <br>
+    <label for="terms">Погодження з умовами користування:</label>
+    <input type="checkbox" id="terms" name="terms" required>
+    <br>
+    <label for="country">Країна:</label>
+    <select id="country" name="country" required>
+        <option value="">-- Виберіть країну --</option>
+        <option value="ua">Україна</option>
+        <option value="us">США</option>
+        <option value="uk">Велика Британія</option>
+        <option value="de">Німеччина</option>
+        <option value="fr">Франція</option>
+    </select>
+    <br>
+    <button type="submit">Зареєструватися</button>
+</form>
+</body>
+</html>
