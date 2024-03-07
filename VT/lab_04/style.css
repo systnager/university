@@ -1,0 +1,65 @@
+p {
+    color: red;
+    text-align: center;
+}
+
+._1, ._3 {
+    color: green;
+}
+
+#_2 {
+    color: pink;
+}
+
+a {
+    color: red;
+}
+
+.red-link {
+    color: red;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul > li > a {
+    color: green;
+}
+
+ul a {
+    color: pink;
+}
+
+ul ul {
+    list-style-type: none;
+}
+
+ul ul ul {
+    list-style-type: square;
+}
+
+ul ul ul a {
+    text-decoration: none;
+}
+
+h1 + p.font-size {
+    font-size: 20px;
+}
+
+p > code.red-text {
+    color: red;
+}
+
+p.pink-text + code {
+    color: pink;
+}
+
+.hover-list li:hover + li {
+    background-color: yellow;
+}
+
+.siblings-list li:hover ~ li {
+    background-color: lightgreen;
+}
+
