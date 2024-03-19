@@ -4,46 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Форма реєстрації</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form_style.css">
 </head>
 <body>
 <form action="#">
     <h2>Реєстрація</h2>
-    <label for="email">E-mail:</label>
-    <input type="email" name="email" required>
+    <label>E-mail: <input type="email" name="email" required></label>
     <br>
-    <label for="password">Пароль:</label>
-    <input type="password" name="password" required>
+    <label>Пароль: <input type="password" name="password" required></label>
     <br>
-    <label for="repeat_password">Повторіть пароль:</label>
-    <input type="password" name="repeat_password" required>
+    <label>Повторіть пароль: <input type="password" name="repeat_password" required></label>
     <br>
-    <label for="name">Ім'я:</label>
-    <input type="text" name="name" required>
+    <label>Ім'я: <input type="text" name="name" required></label>
     <br>
-    <label for="surname">Прізвище:</label>
-    <input type="text" name="surname" required>
+    <label>Прізвище: <input type="text" name="surname" required></label>
     <br>
-    <label for="gender">Стать:</label>
+    <label>Стать:</label>
+    <label>Чоловіча <input type="radio" name="gender" value="male" checked></label>
+    <label>Жіноча <input type="radio" name="gender" value="female"></label>
     <br>
-    <input type="radio" name="gender" value="male" checked>
-    <label for="male">Чоловіча</label>
+    <label>Місто: <select name="city" required>
+        <option>Житомир</option>
+        <option>Київ</option>
+        <option>Одеса</option>
+    </select></label>
     <br>
-    <input type="radio" name="gender" value="female">
-    <label for="female">Жіноча</label>
+    <label>Про себе:  <textarea name="about" rows="5" cols="30"></textarea></label>
     <br>
-    <label for="city">Місто:</label>
-    <input type="text" name="city" required>
-    <br>
-    <label for="about">Про себе:</label>
-    <br>
-    <textarea name="about" rows="5" cols="30"></textarea>
-    <br>
-    <input type="checkbox" name="newsletter">
-    <label for="newsletter">Отримувати розсилку з сайту</label>
-    <br>
-    <input type="checkbox" name="hide_profile">
-    <label for="hide_profile">Приховати профіль на сайті</label>
+    <label>Погодження:</label>
+    <ul>
+        <li><label><input type="checkbox"> Отримувати розсилку з сайтів</label></li>
+        <li><label><input type="checkbox"> Погоджуюсь із правилами сайту</label></li>
+        <li><label><input type="checkbox"> Приховати профіль на сайті</label></li>
+    </ul>
     <br>
     <br>
     <button type="submit">Зареєструватися</button>
