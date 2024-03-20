@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Effect</title>
+    <style>
+        .image-container {
+            width: 120px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .image-container img {
+            width: 100px;
+            position: absolute;
+            bottom: 0;
+            transition: bottom 0.5s ease;
+        }
+
+        .image-container:hover img {
+            bottom: 260px;
+            transition: bottom 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <img src="5.png">
+</div>
+
+</body>
+</html>
