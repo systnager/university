@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-Форма</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('0.png');
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 50%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-link {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: blue;
+            text-decoration: none;
+        }
+
+        form {
+            display: block;
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            padding: 35px;
+            width: 350px;
+            height: 500px;
+            background-image: url('0.png');
+            background-size: cover;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-container">
+        <form>
+            <h1>Форма входу</h1>
+            <div class="form-group">
+                <label for="login">Логін:</label>
+                <input type="text" id="login" name="login" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Емейл:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label>Прийняти умови сайту <input type="checkbox" id="acceptTerms" name="acceptTerms" required></label>
+            </div>
+            <button type="submit" class="button">Увійти</button>
+            <a href="#" class="login-link">Не має акаунта?</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
