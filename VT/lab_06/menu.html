@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-Меню</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu > li {
+            display: inline-block;
+            position: relative;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+        }
+
+        .menu > li:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            display: block;
+            padding: 10px 20px;
+            border-bottom: 1px solid #555;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .submenu2 {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 100%;
+            background-color: #555;
+        }
+
+        .submenu-item:hover .submenu2 {
+            display: block;
+        }
+
+        li:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="menu">
+    <li>Елемент 1</li>
+    <li>Елемент 2
+        <ul class="submenu">
+            <li>Під-елемент 1</li>
+            <li class="submenu-item">Під-елемент 2
+                <ul class="submenu2">
+                    <li>Глибший під-елемент 1</li>
+                    <li>Глибший під-елемент 2</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Елемент 3</li>
+    <li>Елемент 4</li>
+    <li>Елемент 5</li>
+</ul>
+
+</body>
+</html>
