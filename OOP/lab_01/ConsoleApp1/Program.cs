@@ -8,13 +8,13 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.Unicode;
 
         Console.WriteLine("Введіть x:");
-        int x = GetValidInput();
+        double x = GetValidInput();
 
         Console.WriteLine("Введіть y:");
-        int y = GetValidInput();
+        double y = GetValidInput();
 
         Console.WriteLine("Введіть z:");
-        int z = GetValidInput();
+        double z = GetValidInput();
 
         double result = Calculate(x, y, z);
 
@@ -22,16 +22,16 @@ class Program
 
     }
 
-    static int GetValidInput()
+    static double GetValidInput()
     {
-        int coefficient;
+        double coefficient;
         while (true)
         {
             string input = Console.ReadLine();
             input = input.Replace(',', '.');
             if (double.TryParse(input, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double temp))
             {
-                coefficient = (int)temp;
+                coefficient = (double)temp;
                 break;
             }
             else
@@ -43,7 +43,7 @@ class Program
     }
 
 
-    static double Calculate(int x, int y, int z)
+    static double Calculate(double x, double y, double z)
     {
         double a = 2 * Math.Cos(x * x) - 0.5;
         double b = 0.5 + Math.Sin(Math.Pow(y, 2 - z));
