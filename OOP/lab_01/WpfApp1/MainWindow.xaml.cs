@@ -1,10 +1,23 @@
 ﻿using System;
-using System.Globalization;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace WpfApp1
 {
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -12,45 +25,29 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
-        }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            int xValue = GetValidInput(textBoxX);
-            int yValue = GetValidInput(textBoxY);
-            int zValue = GetValidInput(textBoxZ);
-
-            double result = Calculate(xValue, yValue, zValue);
-            textBoxR.Text = result.ToString("F2");
-        }
-
-        private int GetValidInput(TextBox textBox)
-        {
-            int coefficient;
-            while (!int.TryParse(textBox.Text, out coefficient))
+            double x, y, z;
+            bool _x = double.TryParse(textBoxX.Text, out x);
+            bool _y = double.TryParse(textBoxY.Text, out y);
+            bool _z = double.TryParse(textBoxZ.Text, out z);
+            if (!_x || !_z || !_y)
             {
-                MessageBox.Show($"Помилка введення значення {textBox.Name}!", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
-                textBox.Focus();
-                textBox.SelectAll();
-                textBox.Clear();
-
-                if (MessageBox.Show("Бажаєте вийти?", "Помилка", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-                {
-                    Environment.Exit(0);
-                }
+                MessageBox.Show("Помилка введення значення", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
-            return coefficient;
-        }
 
-        private double Calculate(int x, int y, int z)
-        {
             double a = 2 * Math.Cos(x * x) - 0.5;
             double b = 0.5 + Math.Sin(Math.Pow(y, 2 - z));
             double c = z * z / (7 - z / 3);
-            return a / b + c;
+            double res = a / b + c;
+
+            textBoxS.Text = res.ToString("F2");
+        }
+
+        private void textBoxS_TextChanged(object sender, TextChangedEventArgs e)
+        {
         }
     }
 }

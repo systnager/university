@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
@@ -18,38 +19,23 @@ namespace WinFormsApp1
             CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
         }
 
-        static double GetValidInput(TextBox textBox)
+        private void button1_Click(object sender, EventArgs e)
         {
-            double coefficient;
-            if (! double.TryParse(textBox.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double temp)) {
-                MessageBox.Show($"Помилка введення значення {textBox.Name}! Результат не може бути правильним!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox.Focus();
-                textBox.SelectAll();
-
-                textBox.Clear();
-                coefficient = 0.0;
+            double x, y, z;
+            bool _x = double.TryParse(x_.Text, out x);
+            bool _y = double.TryParse(y_.Text, out y);
+            bool _z = double.TryParse(z_.Text, out z);
+            if (!_x || !_z || !_y)
+            {
+                MessageBox.Show($"Помилка введення значення! Результат не може бути правильним!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            coefficient = (double)temp;
-            return coefficient;
-        }
 
-
-        static double Calculate(double x, double y, double z)
-        {
             double a = 2 * Math.Cos(x * x) - 0.5;
             double b = 0.5 + Math.Sin(Math.Pow(y, 2 - z));
             double c = z * z / (7 - z / 3);
-            return a / b + c;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            double xValue = GetValidInput(x);
-            double yValue = GetValidInput(y);
-            double zValue = GetValidInput(z);
-
-            double result = Calculate(xValue, yValue, zValue);
-            r.Text = result.ToString("F2");
+            double res = a / b + c;
+            r.Text = res.ToString("F2");
         }
     }
 }
