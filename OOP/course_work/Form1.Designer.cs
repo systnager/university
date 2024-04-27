@@ -41,12 +41,17 @@
             tabControl = new TabControl();
             tabPage1 = new TabPage();
             panel5 = new Panel();
+            startTabProgressBar = new ProgressBar();
             startTab_back_button = new Button();
             startTab_next_button = new Button();
             startTabControl = new TabControl();
             startTab_0 = new TabPage();
             startTabwebView = new Panel();
             startTab_1 = new TabPage();
+            startTab_2 = new TabPage();
+            startTab2webView = new Panel();
+            startTab_3 = new TabPage();
+            startTab_4 = new TabPage();
             tabPage2 = new TabPage();
             VariableTabControl = new TabControl();
             tabPage9 = new TabPage();
@@ -57,9 +62,6 @@
             tabPage12 = new TabPage();
             tabPage4 = new TabPage();
             tabPage5 = new TabPage();
-            tabPage6 = new TabPage();
-            tabPage7 = new TabPage();
-            tabPage8 = new TabPage();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -71,6 +73,7 @@
             panel5.SuspendLayout();
             startTabControl.SuspendLayout();
             startTab_0.SuspendLayout();
+            startTab_2.SuspendLayout();
             tabPage2.SuspendLayout();
             VariableTabControl.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -159,6 +162,7 @@
             variable.TabIndex = 1;
             variable.Text = "Змінні";
             variable.UseVisualStyleBackColor = false;
+            variable.Click += variable_Click;
             // 
             // panel4
             // 
@@ -182,6 +186,7 @@
             strings.TabIndex = 1;
             strings.Text = "Строки";
             strings.UseVisualStyleBackColor = false;
+            strings.Click += strings_Click;
             // 
             // panel_content
             // 
@@ -222,6 +227,7 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(startTabProgressBar);
             panel5.Controls.Add(startTab_back_button);
             panel5.Controls.Add(startTab_next_button);
             panel5.Dock = DockStyle.Bottom;
@@ -231,6 +237,15 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(763, 50);
             panel5.TabIndex = 1;
+            // 
+            // startTabProgressBar
+            // 
+            startTabProgressBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            startTabProgressBar.Location = new Point(166, 11);
+            startTabProgressBar.Name = "startTabProgressBar";
+            startTabProgressBar.Size = new Size(431, 29);
+            startTabProgressBar.TabIndex = 2;
+            startTabProgressBar.Click += progressBar1_Click;
             // 
             // startTab_back_button
             // 
@@ -243,6 +258,7 @@
             startTab_back_button.TabIndex = 1;
             startTab_back_button.Text = "Назад";
             startTab_back_button.UseVisualStyleBackColor = true;
+            startTab_back_button.Click += startTab_back_button_Click;
             // 
             // startTab_next_button
             // 
@@ -255,14 +271,15 @@
             startTab_next_button.TabIndex = 0;
             startTab_next_button.Text = "Уперед";
             startTab_next_button.UseVisualStyleBackColor = true;
+            startTab_next_button.Click += startTab_next_button_Click;
             // 
             // startTabControl
             // 
             startTabControl.Controls.Add(startTab_0);
             startTabControl.Controls.Add(startTab_1);
-            startTabControl.Controls.Add(tabPage6);
-            startTabControl.Controls.Add(tabPage7);
-            startTabControl.Controls.Add(tabPage8);
+            startTabControl.Controls.Add(startTab_2);
+            startTabControl.Controls.Add(startTab_3);
+            startTabControl.Controls.Add(startTab_4);
             startTabControl.Dock = DockStyle.Fill;
             startTabControl.Location = new Point(3, 3);
             startTabControl.Name = "startTabControl";
@@ -298,6 +315,46 @@
             startTab_1.TabIndex = 1;
             startTab_1.Text = "startTab_1";
             startTab_1.UseVisualStyleBackColor = true;
+            // 
+            // startTab_2
+            // 
+            startTab_2.Controls.Add(startTab2webView);
+            startTab_2.Location = new Point(4, 29);
+            startTab_2.Name = "startTab_2";
+            startTab_2.Padding = new Padding(3);
+            startTab_2.Size = new Size(755, 579);
+            startTab_2.TabIndex = 2;
+            startTab_2.Text = "startTab_2";
+            startTab_2.UseVisualStyleBackColor = true;
+            // 
+            // startTab2webView
+            // 
+            startTab2webView.Dock = DockStyle.Fill;
+            startTab2webView.Location = new Point(3, 3);
+            startTab2webView.Name = "startTab2webView";
+            startTab2webView.Size = new Size(749, 573);
+            startTab2webView.TabIndex = 0;
+            // 
+            // startTab_3
+            // 
+            startTab_3.Location = new Point(4, 29);
+            startTab_3.Name = "startTab_3";
+            startTab_3.Padding = new Padding(3);
+            startTab_3.Size = new Size(755, 579);
+            startTab_3.TabIndex = 3;
+            startTab_3.Text = "startTab_3";
+            startTab_3.UseVisualStyleBackColor = true;
+            // 
+            // startTab_4
+            // 
+            startTab_4.Location = new Point(4, 29);
+            startTab_4.Name = "startTab_4";
+            startTab_4.Padding = new Padding(3);
+            startTab_4.Size = new Size(755, 579);
+            startTab_4.TabIndex = 4;
+            startTab_4.Text = "startTab_4";
+            startTab_4.UseVisualStyleBackColor = true;
+            startTab_4.Click += tabPage8_Click;
             // 
             // tabPage2
             // 
@@ -403,36 +460,6 @@
             tabPage5.Text = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
             // 
-            // tabPage6
-            // 
-            tabPage6.Location = new Point(4, 29);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(755, 579);
-            tabPage6.TabIndex = 2;
-            tabPage6.Text = "tabPage6";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            tabPage7.Location = new Point(4, 29);
-            tabPage7.Name = "tabPage7";
-            tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(755, 579);
-            tabPage7.TabIndex = 3;
-            tabPage7.Text = "tabPage7";
-            tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            tabPage8.Location = new Point(4, 29);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Padding = new Padding(3);
-            tabPage8.Size = new Size(755, 579);
-            tabPage8.TabIndex = 4;
-            tabPage8.Text = "tabPage8";
-            tabPage8.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -456,6 +483,7 @@
             panel5.ResumeLayout(false);
             startTabControl.ResumeLayout(false);
             startTab_0.ResumeLayout(false);
+            startTab_2.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             VariableTabControl.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
@@ -494,8 +522,10 @@
         private Panel panel5;
         private Button startTab_back_button;
         private Panel startTabwebView;
-        private TabPage tabPage6;
-        private TabPage tabPage7;
-        private TabPage tabPage8;
+        private TabPage startTab_2;
+        private TabPage startTab_3;
+        private TabPage startTab_4;
+        private Panel startTab2webView;
+        private ProgressBar startTabProgressBar;
     }
 }
