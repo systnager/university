@@ -9,7 +9,7 @@
             webBrowser.Dock = DockStyle.Fill;
             panel_content.Controls.Add(webBrowser);
             var baseDir = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
-            string htmlFilePath = $@"{baseDir}\index.html";
+            string htmlFilePath = $@"{baseDir}\beginning.html";
             webBrowser.Navigate(htmlFilePath);
         }
 

@@ -40,7 +40,6 @@
             strings = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             panel_content = new Panel();
-            textBox1 = new TextBox();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -64,7 +63,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(3, 4);
             panel1.Margin = new Padding(3, 4, 3, 4);
@@ -169,13 +167,6 @@
             panel_content.TabIndex = 1;
             panel_content.Paint += panel_content_Paint;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(22, 66);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(115, 26);
-            textBox1.TabIndex = 1;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -209,6 +200,5 @@
         private Button strings;
         private ContextMenuStrip contextMenuStrip1;
         private Panel panel_content;
-        private TextBox textBox1;
     }
 }
