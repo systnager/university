@@ -10,6 +10,7 @@ namespace course_work
         String baseDir = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
         int current_tab_index = 0;
         List<TabPage> tabsList = new List<TabPage>();
+        List<int> uncompleteTestStartTabIndexList = new List<int>();
 
         public Form1()
         {
@@ -42,6 +43,10 @@ namespace course_work
             tabsList.Add(startTab_2);
             tabsList.Add(startTab_3);
             tabsList.Add(startTab_4);
+        }
+
+        private void uncompleteTestStartTabIndexListElements() { 
+        
         }
 
         private void loadHTMLInWebView(int tabIndex)
@@ -147,5 +152,33 @@ namespace course_work
         {
 
         }
+
+        private void startTab1CheckButton_Click(object sender, EventArgs e)
+        {
+            int pythonCount = 0;
+
+            foreach (object item in startTab1CheckedListBox.CheckedItems)
+            {
+                if (item.ToString() == "Python")
+                {
+                    pythonCount++;
+                }
+                else
+                {
+                    MessageBox.Show("Неправильна відповідь!");
+                    return;
+                }
+            }
+
+            if (pythonCount == 1)
+            {
+                MessageBox.Show("Правильно!");
+            }
+            else
+            {
+                MessageBox.Show("Неправильна відповідь!");
+            }
+        }
+
     }
 }

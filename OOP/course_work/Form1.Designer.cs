@@ -48,9 +48,15 @@
             startTab_0 = new TabPage();
             startTabwebView = new Panel();
             startTab_1 = new TabPage();
+            startTab1CheckButton = new Button();
+            startTab1CheckedListBox = new CheckedListBox();
+            label3 = new Label();
             startTab_2 = new TabPage();
             startTab2webView = new Panel();
             startTab_3 = new TabPage();
+            button1 = new Button();
+            checkedListBox1 = new CheckedListBox();
+            label2 = new Label();
             startTab_4 = new TabPage();
             tabPage2 = new TabPage();
             VariableTabControl = new TabControl();
@@ -73,7 +79,9 @@
             panel5.SuspendLayout();
             startTabControl.SuspendLayout();
             startTab_0.SuspendLayout();
+            startTab_1.SuspendLayout();
             startTab_2.SuspendLayout();
+            startTab_3.SuspendLayout();
             tabPage2.SuspendLayout();
             VariableTabControl.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -91,7 +99,7 @@
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(239, 651);
+            flowLayoutPanel1.Size = new Size(239, 721);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -194,7 +202,7 @@
             panel_content.Dock = DockStyle.Fill;
             panel_content.Location = new Point(239, 0);
             panel_content.Name = "panel_content";
-            panel_content.Size = new Size(777, 651);
+            panel_content.Size = new Size(767, 721);
             panel_content.TabIndex = 1;
             panel_content.Paint += panel_content_Paint;
             // 
@@ -209,7 +217,7 @@
             tabControl.Location = new Point(0, 0);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(777, 651);
+            tabControl.Size = new Size(767, 721);
             tabControl.TabIndex = 0;
             // 
             // tabPage1
@@ -219,7 +227,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(769, 618);
+            tabPage1.Size = new Size(759, 688);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -231,11 +239,11 @@
             panel5.Controls.Add(startTab_back_button);
             panel5.Controls.Add(startTab_next_button);
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(3, 565);
+            panel5.Location = new Point(3, 635);
             panel5.MaximumSize = new Size(0, 50);
             panel5.MinimumSize = new Size(0, 50);
             panel5.Name = "panel5";
-            panel5.Size = new Size(763, 50);
+            panel5.Size = new Size(753, 50);
             panel5.TabIndex = 1;
             // 
             // startTabProgressBar
@@ -243,7 +251,7 @@
             startTabProgressBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             startTabProgressBar.Location = new Point(166, 11);
             startTabProgressBar.Name = "startTabProgressBar";
-            startTabProgressBar.Size = new Size(431, 29);
+            startTabProgressBar.Size = new Size(421, 29);
             startTabProgressBar.TabIndex = 2;
             startTabProgressBar.Click += progressBar1_Click;
             // 
@@ -263,7 +271,7 @@
             // startTab_next_button
             // 
             startTab_next_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            startTab_next_button.Location = new Point(603, 10);
+            startTab_next_button.Location = new Point(593, 10);
             startTab_next_button.MaximumSize = new Size(150, 30);
             startTab_next_button.MinimumSize = new Size(150, 30);
             startTab_next_button.Name = "startTab_next_button";
@@ -284,7 +292,7 @@
             startTabControl.Location = new Point(3, 3);
             startTabControl.Name = "startTabControl";
             startTabControl.SelectedIndex = 0;
-            startTabControl.Size = new Size(763, 612);
+            startTabControl.Size = new Size(753, 682);
             startTabControl.TabIndex = 0;
             // 
             // startTab_0
@@ -293,7 +301,7 @@
             startTab_0.Location = new Point(4, 29);
             startTab_0.Name = "startTab_0";
             startTab_0.Padding = new Padding(3);
-            startTab_0.Size = new Size(755, 579);
+            startTab_0.Size = new Size(745, 649);
             startTab_0.TabIndex = 0;
             startTab_0.Text = "startTab_0";
             startTab_0.UseVisualStyleBackColor = true;
@@ -303,18 +311,55 @@
             startTabwebView.Dock = DockStyle.Fill;
             startTabwebView.Location = new Point(3, 3);
             startTabwebView.Name = "startTabwebView";
-            startTabwebView.Size = new Size(749, 573);
+            startTabwebView.Size = new Size(739, 643);
             startTabwebView.TabIndex = 0;
             // 
             // startTab_1
             // 
+            startTab_1.Controls.Add(startTab1CheckButton);
+            startTab_1.Controls.Add(startTab1CheckedListBox);
+            startTab_1.Controls.Add(label3);
             startTab_1.Location = new Point(4, 29);
             startTab_1.Name = "startTab_1";
             startTab_1.Padding = new Padding(3);
-            startTab_1.Size = new Size(755, 579);
+            startTab_1.Size = new Size(745, 649);
             startTab_1.TabIndex = 1;
             startTab_1.Text = "startTab_1";
             startTab_1.UseVisualStyleBackColor = true;
+            // 
+            // startTab1CheckButton
+            // 
+            startTab1CheckButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            startTab1CheckButton.Location = new Point(282, 556);
+            startTab1CheckButton.MaximumSize = new Size(150, 30);
+            startTab1CheckButton.MinimumSize = new Size(150, 30);
+            startTab1CheckButton.Name = "startTab1CheckButton";
+            startTab1CheckButton.Size = new Size(150, 30);
+            startTab1CheckButton.TabIndex = 7;
+            startTab1CheckButton.Text = "Перевірка";
+            startTab1CheckButton.UseVisualStyleBackColor = true;
+            startTab1CheckButton.Click += startTab1CheckButton_Click;
+            // 
+            // startTab1CheckedListBox
+            // 
+            startTab1CheckedListBox.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            startTab1CheckedListBox.FormattingEnabled = true;
+            startTab1CheckedListBox.Items.AddRange(new object[] { "C#", "Java", "Python", "HTML" });
+            startTab1CheckedListBox.Location = new Point(19, 98);
+            startTab1CheckedListBox.Name = "startTab1CheckedListBox";
+            startTab1CheckedListBox.Size = new Size(706, 452);
+            startTab1CheckedListBox.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(70, 14);
+            label3.Name = "label3";
+            label3.Size = new Size(626, 31);
+            label3.TabIndex = 2;
+            label3.Text = "Яка мова програмування вивчається у цьому підручнику?";
             // 
             // startTab_2
             // 
@@ -322,7 +367,7 @@
             startTab_2.Location = new Point(4, 29);
             startTab_2.Name = "startTab_2";
             startTab_2.Padding = new Padding(3);
-            startTab_2.Size = new Size(755, 579);
+            startTab_2.Size = new Size(745, 649);
             startTab_2.TabIndex = 2;
             startTab_2.Text = "startTab_2";
             startTab_2.UseVisualStyleBackColor = true;
@@ -332,25 +377,61 @@
             startTab2webView.Dock = DockStyle.Fill;
             startTab2webView.Location = new Point(3, 3);
             startTab2webView.Name = "startTab2webView";
-            startTab2webView.Size = new Size(749, 573);
+            startTab2webView.Size = new Size(739, 643);
             startTab2webView.TabIndex = 0;
             // 
             // startTab_3
             // 
+            startTab_3.Controls.Add(button1);
+            startTab_3.Controls.Add(checkedListBox1);
+            startTab_3.Controls.Add(label2);
             startTab_3.Location = new Point(4, 29);
             startTab_3.Name = "startTab_3";
             startTab_3.Padding = new Padding(3);
-            startTab_3.Size = new Size(755, 579);
+            startTab_3.Size = new Size(745, 649);
             startTab_3.TabIndex = 3;
             startTab_3.Text = "startTab_3";
             startTab_3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button1.Location = new Point(282, 556);
+            button1.MaximumSize = new Size(150, 30);
+            button1.MinimumSize = new Size(150, 30);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 30);
+            button1.TabIndex = 6;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Items.AddRange(new object[] { "print(hello, world)", "print(\"hello, world')", "print(\"hello, world\")" });
+            checkedListBox1.Location = new Point(19, 98);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(706, 452);
+            checkedListBox1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(19, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(706, 31);
+            label2.TabIndex = 1;
+            label2.Text = "Як можна мовою програмування Python вивести текст у консоль?";
             // 
             // startTab_4
             // 
             startTab_4.Location = new Point(4, 29);
             startTab_4.Name = "startTab_4";
             startTab_4.Padding = new Padding(3);
-            startTab_4.Size = new Size(755, 579);
+            startTab_4.Size = new Size(745, 649);
             startTab_4.TabIndex = 4;
             startTab_4.Text = "startTab_4";
             startTab_4.UseVisualStyleBackColor = true;
@@ -362,7 +443,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(769, 618);
+            tabPage2.Size = new Size(759, 688);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -375,7 +456,7 @@
             VariableTabControl.Location = new Point(3, 3);
             VariableTabControl.Name = "VariableTabControl";
             VariableTabControl.SelectedIndex = 0;
-            VariableTabControl.Size = new Size(763, 612);
+            VariableTabControl.Size = new Size(753, 682);
             VariableTabControl.TabIndex = 0;
             // 
             // tabPage9
@@ -383,7 +464,7 @@
             tabPage9.Location = new Point(4, 29);
             tabPage9.Name = "tabPage9";
             tabPage9.Padding = new Padding(3);
-            tabPage9.Size = new Size(755, 579);
+            tabPage9.Size = new Size(745, 649);
             tabPage9.TabIndex = 0;
             tabPage9.Text = "tabPage9";
             tabPage9.UseVisualStyleBackColor = true;
@@ -393,7 +474,7 @@
             tabPage10.Location = new Point(4, 29);
             tabPage10.Name = "tabPage10";
             tabPage10.Padding = new Padding(3);
-            tabPage10.Size = new Size(755, 579);
+            tabPage10.Size = new Size(745, 649);
             tabPage10.TabIndex = 1;
             tabPage10.Text = "tabPage10";
             tabPage10.UseVisualStyleBackColor = true;
@@ -404,7 +485,7 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(769, 618);
+            tabPage3.Size = new Size(759, 688);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -417,7 +498,7 @@
             StringTabControl.Location = new Point(3, 3);
             StringTabControl.Name = "StringTabControl";
             StringTabControl.SelectedIndex = 0;
-            StringTabControl.Size = new Size(763, 612);
+            StringTabControl.Size = new Size(753, 682);
             StringTabControl.TabIndex = 0;
             // 
             // tabPage11
@@ -425,7 +506,7 @@
             tabPage11.Location = new Point(4, 29);
             tabPage11.Name = "tabPage11";
             tabPage11.Padding = new Padding(3);
-            tabPage11.Size = new Size(755, 579);
+            tabPage11.Size = new Size(745, 649);
             tabPage11.TabIndex = 0;
             tabPage11.Text = "tabPage11";
             tabPage11.UseVisualStyleBackColor = true;
@@ -435,7 +516,7 @@
             tabPage12.Location = new Point(4, 29);
             tabPage12.Name = "tabPage12";
             tabPage12.Padding = new Padding(3);
-            tabPage12.Size = new Size(755, 579);
+            tabPage12.Size = new Size(745, 649);
             tabPage12.TabIndex = 1;
             tabPage12.Text = "tabPage12";
             tabPage12.UseVisualStyleBackColor = true;
@@ -445,7 +526,7 @@
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(769, 618);
+            tabPage4.Size = new Size(759, 688);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPage4";
             tabPage4.UseVisualStyleBackColor = true;
@@ -455,7 +536,7 @@
             tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(769, 618);
+            tabPage5.Size = new Size(759, 688);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
@@ -464,10 +545,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1016, 651);
+            ClientSize = new Size(1006, 721);
             Controls.Add(panel_content);
             Controls.Add(flowLayoutPanel1);
             Margin = new Padding(3, 4, 3, 4);
+            MaximumSize = new Size(1024, 768);
+            MinimumSize = new Size(1024, 768);
             Name = "Form1";
             Text = "Підручник для вивчення мови програмування";
             Load += Form1_Load;
@@ -483,7 +566,11 @@
             panel5.ResumeLayout(false);
             startTabControl.ResumeLayout(false);
             startTab_0.ResumeLayout(false);
+            startTab_1.ResumeLayout(false);
+            startTab_1.PerformLayout();
             startTab_2.ResumeLayout(false);
+            startTab_3.ResumeLayout(false);
+            startTab_3.PerformLayout();
             tabPage2.ResumeLayout(false);
             VariableTabControl.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
@@ -527,5 +614,11 @@
         private TabPage startTab_4;
         private Panel startTab2webView;
         private ProgressBar startTabProgressBar;
+        private Button startTab1CheckButton;
+        private CheckedListBox startTab1CheckedListBox;
+        private Label label3;
+        private Button button1;
+        private CheckedListBox checkedListBox1;
+        private Label label2;
     }
 }
