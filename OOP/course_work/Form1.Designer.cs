@@ -68,6 +68,7 @@
             tabPage12 = new TabPage();
             tabPage4 = new TabPage();
             tabPage5 = new TabPage();
+            startTab4webView = new Panel();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -82,6 +83,7 @@
             startTab_1.SuspendLayout();
             startTab_2.SuspendLayout();
             startTab_3.SuspendLayout();
+            startTab_4.SuspendLayout();
             tabPage2.SuspendLayout();
             VariableTabControl.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -379,6 +381,7 @@
             startTab2webView.Name = "startTab2webView";
             startTab2webView.Size = new Size(739, 643);
             startTab2webView.TabIndex = 0;
+            startTab2webView.Paint += startTab2webView_Paint;
             // 
             // startTab_3
             // 
@@ -402,8 +405,9 @@
             button1.Name = "button1";
             button1.Size = new Size(150, 30);
             button1.TabIndex = 6;
-            button1.Text = "button1";
+            button1.Text = "Перевірити";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // checkedListBox1
             // 
@@ -414,6 +418,7 @@
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(706, 452);
             checkedListBox1.TabIndex = 5;
+            checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -428,6 +433,7 @@
             // 
             // startTab_4
             // 
+            startTab_4.Controls.Add(startTab4webView);
             startTab_4.Location = new Point(4, 29);
             startTab_4.Name = "startTab_4";
             startTab_4.Padding = new Padding(3);
@@ -541,6 +547,14 @@
             tabPage5.Text = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // startTab4webView
+            // 
+            startTab4webView.Dock = DockStyle.Fill;
+            startTab4webView.Location = new Point(3, 3);
+            startTab4webView.Name = "startTab4webView";
+            startTab4webView.Size = new Size(739, 643);
+            startTab4webView.TabIndex = 1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -571,6 +585,7 @@
             startTab_2.ResumeLayout(false);
             startTab_3.ResumeLayout(false);
             startTab_3.PerformLayout();
+            startTab_4.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             VariableTabControl.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
@@ -620,5 +635,6 @@
         private Button button1;
         private CheckedListBox checkedListBox1;
         private Label label2;
+        private Panel startTab4webView;
     }
 }

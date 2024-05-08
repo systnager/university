@@ -45,8 +45,9 @@ namespace course_work
             tabsList.Add(startTab_4);
         }
 
-        private void uncompleteTestStartTabIndexListElements() { 
-        
+        private void uncompleteTestStartTabIndexListElements()
+        {
+
         }
 
         private void loadHTMLInWebView(int tabIndex)
@@ -65,6 +66,13 @@ namespace course_work
                     webBrowser.Dock = DockStyle.Fill;
                     startTab2webView.Controls.Add(webBrowser);
                     string htmlFilePath = $@"{baseDir}\beginning_1.html";
+                    webBrowser.Navigate(htmlFilePath);
+                }
+                else if (tabIndex == 4)
+                {
+                    webBrowser.Dock = DockStyle.Fill;
+                    startTab4webView.Controls.Add(webBrowser);
+                    string htmlFilePath = $@"{baseDir}\beginning_2.html";
                     webBrowser.Navigate(htmlFilePath);
                 }
             }
@@ -180,5 +188,41 @@ namespace course_work
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int pythonCount = 0;
+
+            foreach (object item in checkedListBox1.CheckedItems)
+            {
+                if (item.ToString() == "print(\"hello, world\")")
+                {
+                    pythonCount++;
+                }
+                else
+                {
+                    MessageBox.Show("Неправильна відповідь!");
+                    return;
+                }
+            }
+
+            if (pythonCount == 1)
+            {
+                MessageBox.Show("Правильно!");
+            }
+            else
+            {
+                MessageBox.Show("Неправильна відповідь!");
+            }
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void startTab2webView_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
