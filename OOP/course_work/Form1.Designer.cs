@@ -71,9 +71,16 @@
             variable_tab_0 = new TabPage();
             VariableWebViewPanel = new Panel();
             variable_tab_1 = new TabPage();
+            button8 = new Button();
+            checkedListBox2 = new CheckedListBox();
+            label4 = new Label();
             variable_tab_2 = new TabPage();
             VariableWebViewPanel2 = new Panel();
             variable_tab_3 = new TabPage();
+            label8 = new Label();
+            button9 = new Button();
+            checkedListBox3 = new CheckedListBox();
+            label5 = new Label();
             variable_tab_4 = new TabPage();
             VariableWebViewPanel4 = new Panel();
             tabPage3 = new TabPage();
@@ -91,13 +98,21 @@
             string_tab_0 = new TabPage();
             StringWebViewPanel = new Panel();
             string_tab_1 = new TabPage();
+            label9 = new Label();
+            button10 = new Button();
+            checkedListBox4 = new CheckedListBox();
+            label6 = new Label();
             string_tab_2 = new TabPage();
             StringWebViewPanel2 = new Panel();
             string_tab_3 = new TabPage();
+            button11 = new Button();
+            checkedListBox5 = new CheckedListBox();
             string_tab_4 = new TabPage();
             StringWebViewPanel4 = new Panel();
             tabPage4 = new TabPage();
             tabPage5 = new TabPage();
+            label7 = new Label();
+            label10 = new Label();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -117,13 +132,17 @@
             panel6.SuspendLayout();
             VariableTabControl.SuspendLayout();
             variable_tab_0.SuspendLayout();
+            variable_tab_1.SuspendLayout();
             variable_tab_2.SuspendLayout();
+            variable_tab_3.SuspendLayout();
             variable_tab_4.SuspendLayout();
             tabPage3.SuspendLayout();
             panel7.SuspendLayout();
             StringTabControl.SuspendLayout();
             string_tab_0.SuspendLayout();
+            string_tab_1.SuspendLayout();
             string_tab_2.SuspendLayout();
+            string_tab_3.SuspendLayout();
             string_tab_4.SuspendLayout();
             SuspendLayout();
             // 
@@ -618,6 +637,9 @@
             // 
             // variable_tab_1
             // 
+            variable_tab_1.Controls.Add(button8);
+            variable_tab_1.Controls.Add(checkedListBox2);
+            variable_tab_1.Controls.Add(label4);
             variable_tab_1.Location = new Point(4, 29);
             variable_tab_1.Name = "variable_tab_1";
             variable_tab_1.Padding = new Padding(3);
@@ -625,6 +647,40 @@
             variable_tab_1.TabIndex = 1;
             variable_tab_1.Text = "variable_tab_1";
             variable_tab_1.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button8.Location = new Point(284, 549);
+            button8.MaximumSize = new Size(150, 30);
+            button8.MinimumSize = new Size(150, 30);
+            button8.Name = "button8";
+            button8.Size = new Size(150, 30);
+            button8.TabIndex = 10;
+            button8.Text = "Перевірка";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox2
+            // 
+            checkedListBox2.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Items.AddRange(new object[] { "print()", "input()", "quit()", "enter()" });
+            checkedListBox2.Location = new Point(19, 122);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(706, 396);
+            checkedListBox2.TabIndex = 9;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label4.Location = new Point(38, 43);
+            label4.Name = "label4";
+            label4.Size = new Size(663, 28);
+            label4.TabIndex = 8;
+            label4.Text = "Яка команда використовується для отримання вводу від користувача?";
+            label4.Click += label4_Click;
             // 
             // variable_tab_2
             // 
@@ -648,6 +704,10 @@
             // 
             // variable_tab_3
             // 
+            variable_tab_3.Controls.Add(label8);
+            variable_tab_3.Controls.Add(button9);
+            variable_tab_3.Controls.Add(checkedListBox3);
+            variable_tab_3.Controls.Add(label5);
             variable_tab_3.Location = new Point(4, 29);
             variable_tab_3.Name = "variable_tab_3";
             variable_tab_3.Padding = new Padding(3);
@@ -655,6 +715,50 @@
             variable_tab_3.TabIndex = 3;
             variable_tab_3.Text = "variable_tab_3";
             variable_tab_3.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            label8.Location = new Point(239, 79);
+            label8.Name = "label8";
+            label8.Size = new Size(247, 31);
+            label8.TabIndex = 11;
+            label8.Text = "print(\"Hello, \" + input())";
+            // 
+            // button9
+            // 
+            button9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button9.Location = new Point(285, 533);
+            button9.MaximumSize = new Size(150, 30);
+            button9.MinimumSize = new Size(150, 30);
+            button9.Name = "button9";
+            button9.Size = new Size(150, 30);
+            button9.TabIndex = 10;
+            button9.Text = "Перевірка";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox3
+            // 
+            checkedListBox3.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkedListBox3.FormattingEnabled = true;
+            checkedListBox3.Items.AddRange(new object[] { "Виведе Hello, Petro", "Виведе Hello Petro", "Буде помилка" });
+            checkedListBox3.Location = new Point(19, 122);
+            checkedListBox3.Name = "checkedListBox3";
+            checkedListBox3.Size = new Size(706, 340);
+            checkedListBox3.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(103, 40);
+            label5.Name = "label5";
+            label5.Size = new Size(529, 31);
+            label5.TabIndex = 8;
+            label5.Text = "Що виконає код, якщо користувач введе \"Petro\"?";
             // 
             // variable_tab_4
             // 
@@ -839,6 +943,10 @@
             // 
             // string_tab_1
             // 
+            string_tab_1.Controls.Add(label9);
+            string_tab_1.Controls.Add(button10);
+            string_tab_1.Controls.Add(checkedListBox4);
+            string_tab_1.Controls.Add(label6);
             string_tab_1.Location = new Point(4, 29);
             string_tab_1.Name = "string_tab_1";
             string_tab_1.Padding = new Padding(3);
@@ -846,6 +954,50 @@
             string_tab_1.TabIndex = 1;
             string_tab_1.Text = "string_tab_1";
             string_tab_1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            label9.Location = new Point(216, 83);
+            label9.Name = "label9";
+            label9.Size = new Size(327, 31);
+            label9.TabIndex = 11;
+            label9.Text = "print(input() + \", how are you?\")";
+            // 
+            // button10
+            // 
+            button10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button10.Location = new Point(283, 521);
+            button10.MaximumSize = new Size(150, 30);
+            button10.MinimumSize = new Size(150, 30);
+            button10.Name = "button10";
+            button10.Size = new Size(150, 30);
+            button10.TabIndex = 10;
+            button10.Text = "Перевірка";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox4
+            // 
+            checkedListBox4.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkedListBox4.FormattingEnabled = true;
+            checkedListBox4.Items.AddRange(new object[] { "Виведе Petro, how are you?", "Виведе Petro how are you?", "Буде помилка" });
+            checkedListBox4.Location = new Point(19, 122);
+            checkedListBox4.Name = "checkedListBox4";
+            checkedListBox4.Size = new Size(706, 340);
+            checkedListBox4.TabIndex = 9;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(37, 40);
+            label6.Name = "label6";
+            label6.Size = new Size(664, 31);
+            label6.TabIndex = 8;
+            label6.Text = "Що буде після виконання коду, якщо користувач введе Petro?";
             // 
             // string_tab_2
             // 
@@ -868,6 +1020,10 @@
             // 
             // string_tab_3
             // 
+            string_tab_3.Controls.Add(label10);
+            string_tab_3.Controls.Add(label7);
+            string_tab_3.Controls.Add(button11);
+            string_tab_3.Controls.Add(checkedListBox5);
             string_tab_3.Location = new Point(4, 29);
             string_tab_3.Name = "string_tab_3";
             string_tab_3.Padding = new Padding(3);
@@ -875,6 +1031,28 @@
             string_tab_3.TabIndex = 3;
             string_tab_3.Text = "string_tab_3";
             string_tab_3.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button11.Location = new Point(273, 550);
+            button11.MaximumSize = new Size(150, 30);
+            button11.MinimumSize = new Size(150, 30);
+            button11.Name = "button11";
+            button11.Size = new Size(150, 30);
+            button11.TabIndex = 10;
+            button11.Text = "Перевірка";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox5
+            // 
+            checkedListBox5.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkedListBox5.FormattingEnabled = true;
+            checkedListBox5.Items.AddRange(new object[] { "Виведе Petro, how are you?", "Виведе Petro how are you?", "Буде помилка" });
+            checkedListBox5.Location = new Point(19, 122);
+            checkedListBox5.Name = "checkedListBox5";
+            checkedListBox5.Size = new Size(706, 396);
+            checkedListBox5.TabIndex = 9;
             // 
             // string_tab_4
             // 
@@ -915,6 +1093,28 @@
             tabPage5.Text = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(39, 25);
+            label7.Name = "label7";
+            label7.Size = new Size(664, 31);
+            label7.TabIndex = 11;
+            label7.Text = "Що буде після виконання коду, якщо користувач введе Petro?";
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            label10.Location = new Point(209, 69);
+            label10.Name = "label10";
+            label10.Size = new Size(320, 31);
+            label10.TabIndex = 12;
+            label10.Text = "print(f\"(input()), how are you?\")";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -950,13 +1150,21 @@
             panel6.ResumeLayout(false);
             VariableTabControl.ResumeLayout(false);
             variable_tab_0.ResumeLayout(false);
+            variable_tab_1.ResumeLayout(false);
+            variable_tab_1.PerformLayout();
             variable_tab_2.ResumeLayout(false);
+            variable_tab_3.ResumeLayout(false);
+            variable_tab_3.PerformLayout();
             variable_tab_4.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             panel7.ResumeLayout(false);
             StringTabControl.ResumeLayout(false);
             string_tab_0.ResumeLayout(false);
+            string_tab_1.ResumeLayout(false);
+            string_tab_1.PerformLayout();
             string_tab_2.ResumeLayout(false);
+            string_tab_3.ResumeLayout(false);
+            string_tab_3.PerformLayout();
             string_tab_4.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -1033,5 +1241,20 @@
         private Panel VariableWebViewPanel;
         private Panel VariableWebViewPanel2;
         private Panel VariableWebViewPanel4;
+        private Button button8;
+        private CheckedListBox checkedListBox2;
+        private Label label4;
+        private Button button9;
+        private CheckedListBox checkedListBox3;
+        private Label label5;
+        private Button button10;
+        private CheckedListBox checkedListBox4;
+        private Label label6;
+        private Button button11;
+        private CheckedListBox checkedListBox5;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label7;
     }
 }
