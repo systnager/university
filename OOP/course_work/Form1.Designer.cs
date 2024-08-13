@@ -58,17 +58,30 @@
             checkedListBox1 = new CheckedListBox();
             label2 = new Label();
             startTab_4 = new TabPage();
+            startTab4webView = new Panel();
             tabPage2 = new TabPage();
             VariableTabControl = new TabControl();
-            tabPage9 = new TabPage();
-            tabPage10 = new TabPage();
+            variable_tab_0 = new TabPage();
+            variable_tab_1 = new TabPage();
             tabPage3 = new TabPage();
             StringTabControl = new TabControl();
-            tabPage11 = new TabPage();
-            tabPage12 = new TabPage();
+            string_tab_0 = new TabPage();
+            string_tab_1 = new TabPage();
             tabPage4 = new TabPage();
             tabPage5 = new TabPage();
-            startTab4webView = new Panel();
+            variable_tab_2 = new TabPage();
+            variable_tab_3 = new TabPage();
+            variable_tab_4 = new TabPage();
+            string_tab_2 = new TabPage();
+            string_tab_3 = new TabPage();
+            string_tab_4 = new TabPage();
+            panel6 = new Panel();
+            progressBar1 = new ProgressBar();
+            button2 = new Button();
+            button3 = new Button();
+            variable_back = new Button();
+            variable_progressBar = new ProgressBar();
+            variable_next = new Button();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -88,6 +101,7 @@
             VariableTabControl.SuspendLayout();
             tabPage3.SuspendLayout();
             StringTabControl.SuspendLayout();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -247,6 +261,7 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(753, 50);
             panel5.TabIndex = 1;
+            panel5.Paint += panel5_Paint;
             // 
             // startTabProgressBar
             // 
@@ -443,8 +458,17 @@
             startTab_4.UseVisualStyleBackColor = true;
             startTab_4.Click += tabPage8_Click;
             // 
+            // startTab4webView
+            // 
+            startTab4webView.Dock = DockStyle.Fill;
+            startTab4webView.Location = new Point(3, 3);
+            startTab4webView.Name = "startTab4webView";
+            startTab4webView.Size = new Size(739, 643);
+            startTab4webView.TabIndex = 1;
+            // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(panel6);
             tabPage2.Controls.Add(VariableTabControl);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
@@ -456,8 +480,11 @@
             // 
             // VariableTabControl
             // 
-            VariableTabControl.Controls.Add(tabPage9);
-            VariableTabControl.Controls.Add(tabPage10);
+            VariableTabControl.Controls.Add(variable_tab_0);
+            VariableTabControl.Controls.Add(variable_tab_1);
+            VariableTabControl.Controls.Add(variable_tab_2);
+            VariableTabControl.Controls.Add(variable_tab_3);
+            VariableTabControl.Controls.Add(variable_tab_4);
             VariableTabControl.Dock = DockStyle.Fill;
             VariableTabControl.Location = new Point(3, 3);
             VariableTabControl.Name = "VariableTabControl";
@@ -465,25 +492,25 @@
             VariableTabControl.Size = new Size(753, 682);
             VariableTabControl.TabIndex = 0;
             // 
-            // tabPage9
+            // variable_tab_0
             // 
-            tabPage9.Location = new Point(4, 29);
-            tabPage9.Name = "tabPage9";
-            tabPage9.Padding = new Padding(3);
-            tabPage9.Size = new Size(745, 649);
-            tabPage9.TabIndex = 0;
-            tabPage9.Text = "tabPage9";
-            tabPage9.UseVisualStyleBackColor = true;
+            variable_tab_0.Location = new Point(4, 29);
+            variable_tab_0.Name = "variable_tab_0";
+            variable_tab_0.Padding = new Padding(3);
+            variable_tab_0.Size = new Size(745, 649);
+            variable_tab_0.TabIndex = 0;
+            variable_tab_0.Text = "variable_tab_0";
+            variable_tab_0.UseVisualStyleBackColor = true;
             // 
-            // tabPage10
+            // variable_tab_1
             // 
-            tabPage10.Location = new Point(4, 29);
-            tabPage10.Name = "tabPage10";
-            tabPage10.Padding = new Padding(3);
-            tabPage10.Size = new Size(745, 649);
-            tabPage10.TabIndex = 1;
-            tabPage10.Text = "tabPage10";
-            tabPage10.UseVisualStyleBackColor = true;
+            variable_tab_1.Location = new Point(4, 29);
+            variable_tab_1.Name = "variable_tab_1";
+            variable_tab_1.Padding = new Padding(3);
+            variable_tab_1.Size = new Size(745, 649);
+            variable_tab_1.TabIndex = 1;
+            variable_tab_1.Text = "variable_tab_1";
+            variable_tab_1.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -498,8 +525,11 @@
             // 
             // StringTabControl
             // 
-            StringTabControl.Controls.Add(tabPage11);
-            StringTabControl.Controls.Add(tabPage12);
+            StringTabControl.Controls.Add(string_tab_0);
+            StringTabControl.Controls.Add(string_tab_1);
+            StringTabControl.Controls.Add(string_tab_2);
+            StringTabControl.Controls.Add(string_tab_3);
+            StringTabControl.Controls.Add(string_tab_4);
             StringTabControl.Dock = DockStyle.Fill;
             StringTabControl.Location = new Point(3, 3);
             StringTabControl.Name = "StringTabControl";
@@ -507,25 +537,25 @@
             StringTabControl.Size = new Size(753, 682);
             StringTabControl.TabIndex = 0;
             // 
-            // tabPage11
+            // string_tab_0
             // 
-            tabPage11.Location = new Point(4, 29);
-            tabPage11.Name = "tabPage11";
-            tabPage11.Padding = new Padding(3);
-            tabPage11.Size = new Size(745, 649);
-            tabPage11.TabIndex = 0;
-            tabPage11.Text = "tabPage11";
-            tabPage11.UseVisualStyleBackColor = true;
+            string_tab_0.Location = new Point(4, 29);
+            string_tab_0.Name = "string_tab_0";
+            string_tab_0.Padding = new Padding(3);
+            string_tab_0.Size = new Size(745, 649);
+            string_tab_0.TabIndex = 0;
+            string_tab_0.Text = "string_tab_0";
+            string_tab_0.UseVisualStyleBackColor = true;
             // 
-            // tabPage12
+            // string_tab_1
             // 
-            tabPage12.Location = new Point(4, 29);
-            tabPage12.Name = "tabPage12";
-            tabPage12.Padding = new Padding(3);
-            tabPage12.Size = new Size(745, 649);
-            tabPage12.TabIndex = 1;
-            tabPage12.Text = "tabPage12";
-            tabPage12.UseVisualStyleBackColor = true;
+            string_tab_1.Location = new Point(4, 29);
+            string_tab_1.Name = "string_tab_1";
+            string_tab_1.Padding = new Padding(3);
+            string_tab_1.Size = new Size(745, 649);
+            string_tab_1.TabIndex = 1;
+            string_tab_1.Text = "string_tab_1";
+            string_tab_1.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
@@ -547,13 +577,146 @@
             tabPage5.Text = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
             // 
-            // startTab4webView
+            // variable_tab_2
             // 
-            startTab4webView.Dock = DockStyle.Fill;
-            startTab4webView.Location = new Point(3, 3);
-            startTab4webView.Name = "startTab4webView";
-            startTab4webView.Size = new Size(739, 643);
-            startTab4webView.TabIndex = 1;
+            variable_tab_2.Location = new Point(4, 29);
+            variable_tab_2.Name = "variable_tab_2";
+            variable_tab_2.Padding = new Padding(3);
+            variable_tab_2.Size = new Size(745, 649);
+            variable_tab_2.TabIndex = 2;
+            variable_tab_2.Text = "variable_tab_2";
+            variable_tab_2.UseVisualStyleBackColor = true;
+            variable_tab_2.Click += tabPage6_Click;
+            // 
+            // variable_tab_3
+            // 
+            variable_tab_3.Location = new Point(4, 29);
+            variable_tab_3.Name = "variable_tab_3";
+            variable_tab_3.Padding = new Padding(3);
+            variable_tab_3.Size = new Size(745, 649);
+            variable_tab_3.TabIndex = 3;
+            variable_tab_3.Text = "variable_tab_3";
+            variable_tab_3.UseVisualStyleBackColor = true;
+            // 
+            // variable_tab_4
+            // 
+            variable_tab_4.Location = new Point(4, 29);
+            variable_tab_4.Name = "variable_tab_4";
+            variable_tab_4.Padding = new Padding(3);
+            variable_tab_4.Size = new Size(745, 649);
+            variable_tab_4.TabIndex = 4;
+            variable_tab_4.Text = "variable_tab_4";
+            variable_tab_4.UseVisualStyleBackColor = true;
+            // 
+            // string_tab_2
+            // 
+            string_tab_2.Location = new Point(4, 29);
+            string_tab_2.Name = "string_tab_2";
+            string_tab_2.Padding = new Padding(3);
+            string_tab_2.Size = new Size(745, 649);
+            string_tab_2.TabIndex = 2;
+            string_tab_2.Text = "string_tab_2";
+            string_tab_2.UseVisualStyleBackColor = true;
+            // 
+            // string_tab_3
+            // 
+            string_tab_3.Location = new Point(4, 29);
+            string_tab_3.Name = "string_tab_3";
+            string_tab_3.Padding = new Padding(3);
+            string_tab_3.Size = new Size(745, 649);
+            string_tab_3.TabIndex = 3;
+            string_tab_3.Text = "string_tab_3";
+            string_tab_3.UseVisualStyleBackColor = true;
+            // 
+            // string_tab_4
+            // 
+            string_tab_4.Location = new Point(4, 29);
+            string_tab_4.Name = "string_tab_4";
+            string_tab_4.Padding = new Padding(3);
+            string_tab_4.Size = new Size(745, 649);
+            string_tab_4.TabIndex = 4;
+            string_tab_4.Text = "string_tab_4";
+            string_tab_4.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(variable_next);
+            panel6.Controls.Add(variable_progressBar);
+            panel6.Controls.Add(variable_back);
+            panel6.Controls.Add(progressBar1);
+            panel6.Controls.Add(button2);
+            panel6.Controls.Add(button3);
+            panel6.Dock = DockStyle.Bottom;
+            panel6.Location = new Point(3, 635);
+            panel6.MaximumSize = new Size(0, 50);
+            panel6.MinimumSize = new Size(0, 50);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(753, 50);
+            panel6.TabIndex = 2;
+            // 
+            // progressBar1
+            // 
+            progressBar1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            progressBar1.Location = new Point(166, 11);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(974, 0);
+            progressBar1.TabIndex = 2;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button2.Location = new Point(10, -40);
+            button2.MaximumSize = new Size(150, 30);
+            button2.MinimumSize = new Size(150, 30);
+            button2.Name = "button2";
+            button2.Size = new Size(150, 30);
+            button2.TabIndex = 1;
+            button2.Text = "Назад";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button3.Location = new Point(1146, -40);
+            button3.MaximumSize = new Size(150, 30);
+            button3.MinimumSize = new Size(150, 30);
+            button3.Name = "button3";
+            button3.Size = new Size(150, 30);
+            button3.TabIndex = 0;
+            button3.Text = "Уперед";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // variable_back
+            // 
+            variable_back.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            variable_back.Location = new Point(7, 10);
+            variable_back.MaximumSize = new Size(150, 30);
+            variable_back.MinimumSize = new Size(150, 30);
+            variable_back.Name = "variable_back";
+            variable_back.Size = new Size(150, 30);
+            variable_back.TabIndex = 3;
+            variable_back.Text = "Назад";
+            variable_back.UseVisualStyleBackColor = true;
+            // 
+            // variable_progressBar
+            // 
+            variable_progressBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            variable_progressBar.Location = new Point(166, 11);
+            variable_progressBar.Name = "variable_progressBar";
+            variable_progressBar.Size = new Size(421, 29);
+            variable_progressBar.TabIndex = 4;
+            // 
+            // variable_next
+            // 
+            variable_next.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            variable_next.Location = new Point(593, 10);
+            variable_next.MaximumSize = new Size(150, 30);
+            variable_next.MinimumSize = new Size(150, 30);
+            variable_next.Name = "variable_next";
+            variable_next.Size = new Size(150, 30);
+            variable_next.TabIndex = 5;
+            variable_next.Text = "Уперед";
+            variable_next.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -590,6 +753,7 @@
             VariableTabControl.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             StringTabControl.ResumeLayout(false);
+            panel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -615,11 +779,11 @@
         private TabPage startTab_0;
         private TabPage startTab_1;
         private TabControl VariableTabControl;
-        private TabPage tabPage9;
-        private TabPage tabPage10;
+        private TabPage variable_tab_0;
+        private TabPage variable_tab_1;
         private TabControl StringTabControl;
-        private TabPage tabPage11;
-        private TabPage tabPage12;
+        private TabPage string_tab_0;
+        private TabPage string_tab_1;
         private Button startTab_next_button;
         private Panel panel5;
         private Button startTab_back_button;
@@ -636,5 +800,18 @@
         private CheckedListBox checkedListBox1;
         private Label label2;
         private Panel startTab4webView;
+        private TabPage variable_tab_2;
+        private TabPage variable_tab_3;
+        private TabPage variable_tab_4;
+        private TabPage string_tab_2;
+        private TabPage string_tab_3;
+        private TabPage string_tab_4;
+        private Panel panel6;
+        private Button variable_next;
+        private ProgressBar variable_progressBar;
+        private Button variable_back;
+        private ProgressBar progressBar1;
+        private Button button2;
+        private Button button3;
     }
 }

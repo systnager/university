@@ -30,14 +30,17 @@ namespace course_work
 
         private void configureStartTab()
         {
+            current_tab_index = 0;
             startTabProgressBar.Value = 0;
             addSTartTabListElements();
             tabControl.SelectTab(0);
+            startTabControl.SelectTab(current_tab_index);
         }
 
         private void addSTartTabListElements()
         {
             current_tab_index = 0;
+            tabsList = new List<TabPage>();
             tabsList.Add(startTab_0);
             tabsList.Add(startTab_1);
             tabsList.Add(startTab_2);
@@ -221,6 +224,16 @@ namespace course_work
         }
 
         private void startTab2webView_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }
