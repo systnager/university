@@ -408,5 +408,59 @@ namespace course_work
         {
 
         }
+
+        private void variable_check_answer_button_Click(object sender, EventArgs e)
+        {
+            int right_answer_count = 0;
+
+            foreach (object item in VariablecheckedListBox.CheckedItems)
+            {
+                if (item.ToString() == "input()")
+                {
+                    right_answer_count++;
+                }
+                else
+                {
+                    MessageBox.Show("Неправильна відповідь!");
+                    return;
+                }
+            }
+
+            if (right_answer_count == 1)
+            {
+                MessageBox.Show("Правильно!");
+            }
+            else
+            {
+                MessageBox.Show("Неправильна відповідь!");
+            }
+        }
+
+        private void variable_check_answer_button2_Click(object sender, EventArgs e)
+        {
+            int right_answer_count = 0;
+
+            foreach (object item in VariablecheckedListBox2.CheckedItems)
+            {
+                if (item.ToString() == "Виведе Hello, Petro")
+                {
+                    right_answer_count++;
+                }
+                else
+                {
+                    MessageBox.Show("Неправильна відповідь!");
+                    return;
+                }
+            }
+
+            if (right_answer_count == 1)
+            {
+                MessageBox.Show("Правильно!");
+            }
+            else
+            {
+                MessageBox.Show("Неправильна відповідь!");
+            }
+        }
     }
 }
