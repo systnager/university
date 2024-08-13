@@ -37,6 +37,15 @@ namespace course_work
             startTabControl.SelectTab(current_tab_index);
         }
 
+        private void configureVariableTab()
+        {
+            current_tab_index = 0;
+            variable_progressBar.Value = 0;
+            addVariableTabListElements();
+            tabControl.SelectTab(1);
+            VariableTabControl.SelectTab(current_tab_index);
+        }
+
         private void configureStringTab()
         {
             current_tab_index = 0;
@@ -55,6 +64,17 @@ namespace course_work
             tabsList.Add(string_tab_2);
             tabsList.Add(string_tab_3);
             tabsList.Add(string_tab_4);
+        }
+
+        private void addVariableTabListElements()
+        {
+            current_tab_index = 0;
+            tabsList = new List<TabPage>();
+            tabsList.Add(variable_tab_0);
+            tabsList.Add(variable_tab_1);
+            tabsList.Add(variable_tab_2);
+            tabsList.Add(variable_tab_3);
+            tabsList.Add(variable_tab_4);
         }
 
         private void addSTartTabListElements()
@@ -100,7 +120,32 @@ namespace course_work
                 }
             }
 
-            if (tabControl.SelectedIndex == 2)
+            else if (tabControl.SelectedIndex == 1)
+            {
+                if (tabIndex == 0)
+                {
+                    webBrowser.Dock = DockStyle.Fill;
+                    VariableWebViewPanel.Controls.Add(webBrowser);
+                    string htmlFilePath = $@"{baseDir}\variable_0.html";
+                    webBrowser.Navigate(htmlFilePath);
+                }
+                else if (tabIndex == 2)
+                {
+                    webBrowser.Dock = DockStyle.Fill;
+                    VariableWebViewPanel2.Controls.Add(webBrowser);
+                    string htmlFilePath = $@"{baseDir}\variable_1.html";
+                    webBrowser.Navigate(htmlFilePath);
+                }
+                else if (tabIndex == 4)
+                {
+                    webBrowser.Dock = DockStyle.Fill;
+                    VariableWebViewPanel4.Controls.Add(webBrowser);
+                    string htmlFilePath = $@"{baseDir}\variable_2.html";
+                    webBrowser.Navigate(htmlFilePath);
+                }
+            }
+
+            else if (tabControl.SelectedIndex == 2)
             {
                 if (tabIndex == 0)
                 {
@@ -207,7 +252,13 @@ namespace course_work
 
         private void variable_Click(object sender, EventArgs e)
         {
+            configureVariableTab();
+            webBrowser.Dock = DockStyle.Fill;
+            VariableWebViewPanel.Controls.Add(webBrowser);
 
+            string htmlFilePath = $@"{baseDir}\variable_0.html";
+            webBrowser.Navigate(htmlFilePath);
+            tabControl.SelectTab(1);
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
@@ -318,6 +369,38 @@ namespace course_work
             else
             {
                 MessageBox.Show("Це перша сторінка!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void variable_back_Click(object sender, EventArgs e)
+        {
+            if (current_tab_index > 0)
+            {
+                current_tab_index--;
+                int progress = ((current_tab_index + 1) * 100 / tabsList.Count);
+                variable_progressBar.Value = progress;
+                loadHTMLInWebView(current_tab_index);
+                VariableTabControl.SelectTab(current_tab_index);
+            }
+            else
+            {
+                MessageBox.Show("Це перша сторінка!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void variable_next_Click(object sender, EventArgs e)
+        {
+            if ((current_tab_index + 1) < tabsList.Count)
+            {
+                current_tab_index++;
+                int progress = ((current_tab_index + 1) * 100 / tabsList.Count);
+                variable_progressBar.Value = progress;
+                loadHTMLInWebView(current_tab_index);
+                VariableTabControl.SelectTab(current_tab_index);
+            }
+            else
+            {
+                MessageBox.Show("Це остання сторінка!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

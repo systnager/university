@@ -528,6 +528,7 @@
             variable_next.TabIndex = 5;
             variable_next.Text = "Уперед";
             variable_next.UseVisualStyleBackColor = true;
+            variable_next.Click += variable_next_Click;
             // 
             // variable_progressBar
             // 
@@ -548,6 +549,7 @@
             variable_back.TabIndex = 3;
             variable_back.Text = "Назад";
             variable_back.UseVisualStyleBackColor = true;
+            variable_back.Click += variable_back_Click;
             // 
             // progressBar1
             // 
