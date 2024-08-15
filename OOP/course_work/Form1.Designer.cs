@@ -99,16 +99,16 @@
             StringWebViewPanel = new Panel();
             string_tab_1 = new TabPage();
             label9 = new Label();
-            button10 = new Button();
-            checkedListBox4 = new CheckedListBox();
+            string_is_answer_right_check_button = new Button();
+            StringcheckedListBox = new CheckedListBox();
             label6 = new Label();
             string_tab_2 = new TabPage();
             StringWebViewPanel2 = new Panel();
             string_tab_3 = new TabPage();
             label10 = new Label();
             label7 = new Label();
-            button11 = new Button();
-            checkedListBox5 = new CheckedListBox();
+            string_is_answer_right_check_button_2 = new Button();
+            StringcheckedListBox2 = new CheckedListBox();
             string_tab_4 = new TabPage();
             StringWebViewPanel4 = new Panel();
             tabPage4 = new TabPage();
@@ -946,8 +946,8 @@
             // string_tab_1
             // 
             string_tab_1.Controls.Add(label9);
-            string_tab_1.Controls.Add(button10);
-            string_tab_1.Controls.Add(checkedListBox4);
+            string_tab_1.Controls.Add(string_is_answer_right_check_button);
+            string_tab_1.Controls.Add(StringcheckedListBox);
             string_tab_1.Controls.Add(label6);
             string_tab_1.Location = new Point(4, 29);
             string_tab_1.Name = "string_tab_1";
@@ -968,27 +968,29 @@
             label9.TabIndex = 11;
             label9.Text = "print(input() + \", how are you?\")";
             // 
-            // button10
+            // string_is_answer_right_check_button
             // 
-            button10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button10.Location = new Point(283, 521);
-            button10.MaximumSize = new Size(150, 30);
-            button10.MinimumSize = new Size(150, 30);
-            button10.Name = "button10";
-            button10.Size = new Size(150, 30);
-            button10.TabIndex = 10;
-            button10.Text = "Перевірка";
-            button10.UseVisualStyleBackColor = true;
+            string_is_answer_right_check_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            string_is_answer_right_check_button.Location = new Point(283, 521);
+            string_is_answer_right_check_button.MaximumSize = new Size(150, 30);
+            string_is_answer_right_check_button.MinimumSize = new Size(150, 30);
+            string_is_answer_right_check_button.Name = "string_is_answer_right_check_button";
+            string_is_answer_right_check_button.Size = new Size(150, 30);
+            string_is_answer_right_check_button.TabIndex = 10;
+            string_is_answer_right_check_button.Text = "Перевірка";
+            string_is_answer_right_check_button.UseVisualStyleBackColor = true;
+            string_is_answer_right_check_button.Click += button10_Click;
             // 
-            // checkedListBox4
+            // StringcheckedListBox
             // 
-            checkedListBox4.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkedListBox4.FormattingEnabled = true;
-            checkedListBox4.Items.AddRange(new object[] { "Виведе Petro, how are you?", "Виведе Petro how are you?", "Буде помилка" });
-            checkedListBox4.Location = new Point(19, 122);
-            checkedListBox4.Name = "checkedListBox4";
-            checkedListBox4.Size = new Size(706, 340);
-            checkedListBox4.TabIndex = 9;
+            StringcheckedListBox.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            StringcheckedListBox.FormattingEnabled = true;
+            StringcheckedListBox.Items.AddRange(new object[] { "Виведе Petro, how are you?", "Виведе Petro how are you?", "Буде помилка" });
+            StringcheckedListBox.Location = new Point(19, 122);
+            StringcheckedListBox.Name = "StringcheckedListBox";
+            StringcheckedListBox.Size = new Size(706, 340);
+            StringcheckedListBox.TabIndex = 9;
+            StringcheckedListBox.SelectedIndexChanged += checkedListBox4_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -1024,8 +1026,8 @@
             // 
             string_tab_3.Controls.Add(label10);
             string_tab_3.Controls.Add(label7);
-            string_tab_3.Controls.Add(button11);
-            string_tab_3.Controls.Add(checkedListBox5);
+            string_tab_3.Controls.Add(string_is_answer_right_check_button_2);
+            string_tab_3.Controls.Add(StringcheckedListBox2);
             string_tab_3.Location = new Point(4, 29);
             string_tab_3.Name = "string_tab_3";
             string_tab_3.Padding = new Padding(3);
@@ -1056,27 +1058,28 @@
             label7.TabIndex = 11;
             label7.Text = "Що буде після виконання коду, якщо користувач введе Petro?";
             // 
-            // button11
+            // string_is_answer_right_check_button_2
             // 
-            button11.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button11.Location = new Point(273, 550);
-            button11.MaximumSize = new Size(150, 30);
-            button11.MinimumSize = new Size(150, 30);
-            button11.Name = "button11";
-            button11.Size = new Size(150, 30);
-            button11.TabIndex = 10;
-            button11.Text = "Перевірка";
-            button11.UseVisualStyleBackColor = true;
+            string_is_answer_right_check_button_2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            string_is_answer_right_check_button_2.Location = new Point(273, 550);
+            string_is_answer_right_check_button_2.MaximumSize = new Size(150, 30);
+            string_is_answer_right_check_button_2.MinimumSize = new Size(150, 30);
+            string_is_answer_right_check_button_2.Name = "string_is_answer_right_check_button_2";
+            string_is_answer_right_check_button_2.Size = new Size(150, 30);
+            string_is_answer_right_check_button_2.TabIndex = 10;
+            string_is_answer_right_check_button_2.Text = "Перевірка";
+            string_is_answer_right_check_button_2.UseVisualStyleBackColor = true;
+            string_is_answer_right_check_button_2.Click += string_is_answer_right_check_button_2_Click;
             // 
-            // checkedListBox5
+            // StringcheckedListBox2
             // 
-            checkedListBox5.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkedListBox5.FormattingEnabled = true;
-            checkedListBox5.Items.AddRange(new object[] { "Виведе Petro, how are you?", "Виведе Petro how are you?", "Буде помилка" });
-            checkedListBox5.Location = new Point(19, 122);
-            checkedListBox5.Name = "checkedListBox5";
-            checkedListBox5.Size = new Size(706, 396);
-            checkedListBox5.TabIndex = 9;
+            StringcheckedListBox2.Font = new Font("Segoe UI Light", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            StringcheckedListBox2.FormattingEnabled = true;
+            StringcheckedListBox2.Items.AddRange(new object[] { "Виведе Petro, how are you?", "Виведе Petro how are you?", "Буде помилка" });
+            StringcheckedListBox2.Location = new Point(19, 122);
+            StringcheckedListBox2.Name = "StringcheckedListBox2";
+            StringcheckedListBox2.Size = new Size(706, 396);
+            StringcheckedListBox2.TabIndex = 9;
             // 
             // string_tab_4
             // 
@@ -1249,11 +1252,11 @@
         private Button variable_check_answer_button2;
         private CheckedListBox VariablecheckedListBox2;
         private Label label5;
-        private Button button10;
-        private CheckedListBox checkedListBox4;
+        private Button string_is_answer_right_check_button;
+        private CheckedListBox StringcheckedListBox;
         private Label label6;
-        private Button button11;
-        private CheckedListBox checkedListBox5;
+        private Button string_is_answer_right_check_button_2;
+        private CheckedListBox StringcheckedListBox2;
         private Label label8;
         private Label label9;
         private Label label10;
