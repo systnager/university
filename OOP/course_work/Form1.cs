@@ -612,5 +612,10 @@ namespace course_work
             string_statistic_progressBar.Value = progresJson.GetValueByKey("string_test_0_good") * 100 / (progresJson.GetValueByKey("string_test_0_good") + progresJson.GetValueByKey("string_test_0_bad"));
             string_statistic_progressBar2.Value = progresJson.GetValueByKey("string_test_1_good") * 100 / (progresJson.GetValueByKey("string_test_1_good") + progresJson.GetValueByKey("string_test_1_bad"));
         }
+
+        private void show_info_button_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(4);
+        }
     }
 }
