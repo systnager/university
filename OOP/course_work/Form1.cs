@@ -11,6 +11,7 @@ namespace course_work
         int current_tab_index = 0;
         List<TabPage> tabsList = new List<TabPage>();
         List<int> uncompleteTestStartTabIndexList = new List<int>();
+        JsonHandler jsonHandler = new JsonHandler("data.json");
 
         public Form1()
         {
@@ -195,6 +196,24 @@ namespace course_work
 
         private void startTab_next_button_Click(object sender, EventArgs e)
         {
+            if (current_tab_index + 1 == 2)
+            {
+                if (jsonHandler.GetBoolValue("beginning_test_0") == false)
+                {
+                    MessageBox.Show("Пройдіть тест!");
+                    return;
+                }
+            }
+
+            else if (current_tab_index + 1 == 4)
+            {
+                if (jsonHandler.GetBoolValue("beginning_test_1") == false)
+                {
+                    MessageBox.Show("Пройдіть тест!");
+                    return;
+                }
+            }
+
             if ((current_tab_index + 1) < tabsList.Count)
             {
                 current_tab_index++;
@@ -286,6 +305,7 @@ namespace course_work
             if (pythonCount == 1)
             {
                 MessageBox.Show("Правильно!");
+                jsonHandler.AddOrUpdateEntry("beginning_test_0", true);
             }
             else
             {
@@ -312,6 +332,7 @@ namespace course_work
 
             if (pythonCount == 1)
             {
+                jsonHandler.AddOrUpdateEntry("beginning_test_1", true);
                 MessageBox.Show("Правильно!");
             }
             else
@@ -342,6 +363,22 @@ namespace course_work
 
         private void string_next_Click(object sender, EventArgs e)
         {
+            if (current_tab_index + 1 == 2) {
+                if (jsonHandler.GetBoolValue("string_test_0") == false) {
+                    MessageBox.Show("Пройдіть тест!");
+                    return;
+                }
+            }
+
+            else if (current_tab_index + 1 == 4)
+            {
+                if (jsonHandler.GetBoolValue("string_test_1") == false)
+                {
+                    MessageBox.Show("Пройдіть тест!");
+                    return;
+                }
+            }
+
             if ((current_tab_index + 1) < tabsList.Count)
             {
                 current_tab_index++;
@@ -390,6 +427,24 @@ namespace course_work
 
         private void variable_next_Click(object sender, EventArgs e)
         {
+            if (current_tab_index + 1 == 2)
+            {
+                if (jsonHandler.GetBoolValue("variable_test_0") == false)
+                {
+                    MessageBox.Show("Пройдіть тест!");
+                    return;
+                }
+            }
+
+            else if (current_tab_index + 1 == 4)
+            {
+                if (jsonHandler.GetBoolValue("variable_test_1") == false)
+                {
+                    MessageBox.Show("Пройдіть тест!");
+                    return;
+                }
+            }
+
             if ((current_tab_index + 1) < tabsList.Count)
             {
                 current_tab_index++;
@@ -428,6 +483,7 @@ namespace course_work
 
             if (right_answer_count == 1)
             {
+                jsonHandler.AddOrUpdateEntry("variable_test_0", true);
                 MessageBox.Show("Правильно!");
             }
             else
@@ -455,6 +511,7 @@ namespace course_work
 
             if (right_answer_count == 1)
             {
+                jsonHandler.AddOrUpdateEntry("variable_test_1", true);
                 MessageBox.Show("Правильно!");
             }
             else
@@ -482,6 +539,7 @@ namespace course_work
 
             if (right_answer_count == 1)
             {
+                jsonHandler.AddOrUpdateEntry("string_test_0", true);
                 MessageBox.Show("Правильно!");
             }
             else
@@ -514,6 +572,7 @@ namespace course_work
 
             if (right_answer_count == 1)
             {
+                jsonHandler.AddOrUpdateEntry("string_test_1", true);
                 MessageBox.Show("Правильно!");
             }
             else
