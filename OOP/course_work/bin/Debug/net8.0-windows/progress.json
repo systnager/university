@@ -1,0 +1,14 @@
+{
+  "beginning_test_0_good": 1,
+  "beginning_test_0_bad": 2,
+  "beginning_test_1_good": 1,
+  "beginning_test_1_bad": 2,
+  "string_test_0_good": 1,
+  "string_test_0_bad": 2,
+  "string_test_1_good": 1,
+  "string_test_1_bad": 2,
+  "variable_test_0_good": 1,
+  "variable_test_0_bad": 2,
+  "variable_test_1_good": 1,
+  "variable_test_1_bad": 2
+}

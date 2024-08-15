@@ -12,6 +12,7 @@ namespace course_work
         List<TabPage> tabsList = new List<TabPage>();
         List<int> uncompleteTestStartTabIndexList = new List<int>();
         JsonHandler jsonHandler = new JsonHandler("data.json");
+        ProgresJson progresJson = new ProgresJson("progress.json");
 
         public Form1()
         {
@@ -298,6 +299,7 @@ namespace course_work
                 else
                 {
                     MessageBox.Show("Неправильна відповідь!");
+                    progresJson.AddValueToKey("beginning_test_0_bad", 1);
                     return;
                 }
             }
@@ -306,10 +308,12 @@ namespace course_work
             {
                 MessageBox.Show("Правильно!");
                 jsonHandler.AddOrUpdateEntry("beginning_test_0", true);
+                progresJson.AddValueToKey("beginning_test_0_good", 1);
             }
             else
             {
                 MessageBox.Show("Неправильна відповідь!");
+                progresJson.AddValueToKey("beginning_test_0_bad", 1);
             }
         }
 
@@ -326,6 +330,7 @@ namespace course_work
                 else
                 {
                     MessageBox.Show("Неправильна відповідь!");
+                    progresJson.AddValueToKey("beginning_test_1_bad", 1);
                     return;
                 }
             }
@@ -334,10 +339,12 @@ namespace course_work
             {
                 jsonHandler.AddOrUpdateEntry("beginning_test_1", true);
                 MessageBox.Show("Правильно!");
+                progresJson.AddValueToKey("beginning_test_1_good", 1);
             }
             else
             {
                 MessageBox.Show("Неправильна відповідь!");
+                progresJson.AddValueToKey("beginning_test_1_bad", 1);
             }
         }
 
@@ -477,6 +484,7 @@ namespace course_work
                 else
                 {
                     MessageBox.Show("Неправильна відповідь!");
+                    progresJson.AddValueToKey("variable_test_0_bad", 1);
                     return;
                 }
             }
@@ -484,11 +492,13 @@ namespace course_work
             if (right_answer_count == 1)
             {
                 jsonHandler.AddOrUpdateEntry("variable_test_0", true);
+                progresJson.AddValueToKey("variable_test_0_good", 1);
                 MessageBox.Show("Правильно!");
             }
             else
             {
                 MessageBox.Show("Неправильна відповідь!");
+                progresJson.AddValueToKey("variable_test_0_bad", 1);
             }
         }
 
@@ -505,6 +515,7 @@ namespace course_work
                 else
                 {
                     MessageBox.Show("Неправильна відповідь!");
+                    progresJson.AddValueToKey("variable_test_1_bad", 1);
                     return;
                 }
             }
@@ -512,11 +523,13 @@ namespace course_work
             if (right_answer_count == 1)
             {
                 jsonHandler.AddOrUpdateEntry("variable_test_1", true);
+                progresJson.AddValueToKey("variable_test_1_good", 1);
                 MessageBox.Show("Правильно!");
             }
             else
             {
                 MessageBox.Show("Неправильна відповідь!");
+                progresJson.AddValueToKey("variable_test_1_bad", 1);
             }
         }
 
@@ -533,6 +546,7 @@ namespace course_work
                 else
                 {
                     MessageBox.Show("Неправильна відповідь!");
+                    progresJson.AddValueToKey("string_test_0_bad", 1);
                     return;
                 }
             }
@@ -540,11 +554,13 @@ namespace course_work
             if (right_answer_count == 1)
             {
                 jsonHandler.AddOrUpdateEntry("string_test_0", true);
+                progresJson.AddValueToKey("string_test_0_good", 1);
                 MessageBox.Show("Правильно!");
             }
             else
             {
                 MessageBox.Show("Неправильна відповідь!");
+                progresJson.AddValueToKey("string_test_0_bad", 1);
             }
         }
 
@@ -566,6 +582,7 @@ namespace course_work
                 else
                 {
                     MessageBox.Show("Неправильна відповідь!");
+                    progresJson.AddValueToKey("string_test_1_bad", 1);
                     return;
                 }
             }
@@ -573,11 +590,13 @@ namespace course_work
             if (right_answer_count == 1)
             {
                 jsonHandler.AddOrUpdateEntry("string_test_1", true);
+                progresJson.AddValueToKey("string_test_1_good", 1);
                 MessageBox.Show("Правильно!");
             }
             else
             {
                 MessageBox.Show("Неправильна відповідь!");
+                progresJson.AddValueToKey("string_test_1_bad", 1);
             }
         }
     }
