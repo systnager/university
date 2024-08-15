@@ -113,6 +113,22 @@
             StringWebViewPanel4 = new Panel();
             tabPage4 = new TabPage();
             tabPage5 = new TabPage();
+            show_progress_button = new Button();
+            show_info_button = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            label11 = new Label();
+            beginning_statistic_progressBar = new ProgressBar();
+            label12 = new Label();
+            label13 = new Label();
+            beginning_statistic_progressBar2 = new ProgressBar();
+            label14 = new Label();
+            variable_statistic_progressBar = new ProgressBar();
+            label15 = new Label();
+            variable_statistic_progressBar2 = new ProgressBar();
+            label16 = new Label();
+            string_statistic_progressBar = new ProgressBar();
+            label17 = new Label();
+            string_statistic_progressBar2 = new ProgressBar();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -144,6 +160,7 @@
             string_tab_2.SuspendLayout();
             string_tab_3.SuspendLayout();
             string_tab_4.SuspendLayout();
+            tabPage4.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -153,6 +170,8 @@
             flowLayoutPanel1.Controls.Add(panel3);
             flowLayoutPanel1.Controls.Add(panel2);
             flowLayoutPanel1.Controls.Add(panel4);
+            flowLayoutPanel1.Controls.Add(show_progress_button);
+            flowLayoutPanel1.Controls.Add(show_info_button);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
@@ -1102,6 +1121,19 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(label17);
+            tabPage4.Controls.Add(string_statistic_progressBar2);
+            tabPage4.Controls.Add(label16);
+            tabPage4.Controls.Add(string_statistic_progressBar);
+            tabPage4.Controls.Add(label15);
+            tabPage4.Controls.Add(variable_statistic_progressBar2);
+            tabPage4.Controls.Add(label14);
+            tabPage4.Controls.Add(variable_statistic_progressBar);
+            tabPage4.Controls.Add(label13);
+            tabPage4.Controls.Add(beginning_statistic_progressBar2);
+            tabPage4.Controls.Add(label12);
+            tabPage4.Controls.Add(beginning_statistic_progressBar);
+            tabPage4.Controls.Add(label11);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
@@ -1119,6 +1151,141 @@
             tabPage5.TabIndex = 4;
             tabPage5.Text = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // show_progress_button
+            // 
+            show_progress_button.BackColor = Color.Black;
+            show_progress_button.BackgroundImageLayout = ImageLayout.None;
+            show_progress_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            show_progress_button.ForeColor = Color.White;
+            show_progress_button.Location = new Point(3, 416);
+            show_progress_button.Margin = new Padding(3, 4, 3, 4);
+            show_progress_button.Name = "show_progress_button";
+            show_progress_button.Size = new Size(229, 76);
+            show_progress_button.TabIndex = 3;
+            show_progress_button.Text = "Прогрес";
+            show_progress_button.UseVisualStyleBackColor = false;
+            show_progress_button.Click += button8_Click;
+            // 
+            // show_info_button
+            // 
+            show_info_button.BackColor = Color.Black;
+            show_info_button.BackgroundImageLayout = ImageLayout.None;
+            show_info_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            show_info_button.ForeColor = Color.White;
+            show_info_button.Location = new Point(3, 500);
+            show_info_button.Margin = new Padding(3, 4, 3, 4);
+            show_info_button.Name = "show_info_button";
+            show_info_button.Size = new Size(229, 76);
+            show_info_button.TabIndex = 4;
+            show_info_button.Text = "Інфо";
+            show_info_button.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 24F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label11.Location = new Point(130, 19);
+            label11.Name = "label11";
+            label11.Size = new Size(498, 54);
+            label11.TabIndex = 0;
+            label11.Text = "Твоя успішність на тестах";
+            // 
+            // beginning_statistic_progressBar
+            // 
+            beginning_statistic_progressBar.Location = new Point(383, 111);
+            beginning_statistic_progressBar.Name = "beginning_statistic_progressBar";
+            beginning_statistic_progressBar.Size = new Size(354, 41);
+            beginning_statistic_progressBar.TabIndex = 1;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(17, 132);
+            label12.Name = "label12";
+            label12.Size = new Size(96, 20);
+            label12.TabIndex = 2;
+            label12.Text = "Початок №1";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(17, 192);
+            label13.Name = "label13";
+            label13.Size = new Size(96, 20);
+            label13.TabIndex = 4;
+            label13.Text = "Початок №2";
+            // 
+            // beginning_statistic_progressBar2
+            // 
+            beginning_statistic_progressBar2.Location = new Point(383, 171);
+            beginning_statistic_progressBar2.Name = "beginning_statistic_progressBar2";
+            beginning_statistic_progressBar2.Size = new Size(354, 41);
+            beginning_statistic_progressBar2.TabIndex = 3;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(17, 263);
+            label14.Name = "label14";
+            label14.Size = new Size(83, 20);
+            label14.TabIndex = 6;
+            label14.Text = "Змінні №1";
+            // 
+            // variable_statistic_progressBar
+            // 
+            variable_statistic_progressBar.Location = new Point(383, 242);
+            variable_statistic_progressBar.Name = "variable_statistic_progressBar";
+            variable_statistic_progressBar.Size = new Size(354, 41);
+            variable_statistic_progressBar.TabIndex = 5;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(17, 320);
+            label15.Name = "label15";
+            label15.Size = new Size(83, 20);
+            label15.TabIndex = 8;
+            label15.Text = "Змінні №2";
+            // 
+            // variable_statistic_progressBar2
+            // 
+            variable_statistic_progressBar2.Location = new Point(383, 299);
+            variable_statistic_progressBar2.Name = "variable_statistic_progressBar2";
+            variable_statistic_progressBar2.Size = new Size(354, 41);
+            variable_statistic_progressBar2.TabIndex = 7;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(17, 393);
+            label16.Name = "label16";
+            label16.Size = new Size(87, 20);
+            label16.TabIndex = 10;
+            label16.Text = "Строки №1";
+            // 
+            // string_statistic_progressBar
+            // 
+            string_statistic_progressBar.Location = new Point(383, 372);
+            string_statistic_progressBar.Name = "string_statistic_progressBar";
+            string_statistic_progressBar.Size = new Size(354, 41);
+            string_statistic_progressBar.TabIndex = 9;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(17, 454);
+            label17.Name = "label17";
+            label17.Size = new Size(87, 20);
+            label17.TabIndex = 12;
+            label17.Text = "Строки №2";
+            // 
+            // string_statistic_progressBar2
+            // 
+            string_statistic_progressBar2.Location = new Point(383, 433);
+            string_statistic_progressBar2.Name = "string_statistic_progressBar2";
+            string_statistic_progressBar2.Size = new Size(354, 41);
+            string_statistic_progressBar2.TabIndex = 11;
             // 
             // Form1
             // 
@@ -1171,6 +1338,8 @@
             string_tab_3.ResumeLayout(false);
             string_tab_3.PerformLayout();
             string_tab_4.ResumeLayout(false);
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1261,5 +1430,21 @@
         private Label label9;
         private Label label10;
         private Label label7;
+        private Button show_progress_button;
+        private Button show_info_button;
+        private Label label17;
+        private ProgressBar string_statistic_progressBar2;
+        private Label label16;
+        private ProgressBar string_statistic_progressBar;
+        private Label label15;
+        private ProgressBar variable_statistic_progressBar2;
+        private Label label14;
+        private ProgressBar variable_statistic_progressBar;
+        private Label label13;
+        private ProgressBar beginning_statistic_progressBar2;
+        private Label label12;
+        private ProgressBar beginning_statistic_progressBar;
+        private Label label11;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

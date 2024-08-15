@@ -1,14 +1,14 @@
 {
   "beginning_test_0_good": 1,
-  "beginning_test_0_bad": 2,
-  "beginning_test_1_good": 1,
-  "beginning_test_1_bad": 2,
-  "string_test_0_good": 1,
-  "string_test_0_bad": 2,
-  "string_test_1_good": 1,
-  "string_test_1_bad": 2,
-  "variable_test_0_good": 1,
-  "variable_test_0_bad": 2,
-  "variable_test_1_good": 1,
-  "variable_test_1_bad": 2
+  "beginning_test_0_bad": 9,
+  "beginning_test_1_good": 2,
+  "beginning_test_1_bad": 8,
+  "string_test_0_good": 3,
+  "string_test_0_bad": 7,
+  "string_test_1_good": 4,
+  "string_test_1_bad": 6,
+  "variable_test_0_good": 5,
+  "variable_test_0_bad": 5,
+  "variable_test_1_good": 6,
+  "variable_test_1_bad": 4
 }

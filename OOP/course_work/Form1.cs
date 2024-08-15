@@ -370,8 +370,10 @@ namespace course_work
 
         private void string_next_Click(object sender, EventArgs e)
         {
-            if (current_tab_index + 1 == 2) {
-                if (jsonHandler.GetBoolValue("string_test_0") == false) {
+            if (current_tab_index + 1 == 2)
+            {
+                if (jsonHandler.GetBoolValue("string_test_0") == false)
+                {
                     MessageBox.Show("Пройдіть тест!");
                     return;
                 }
@@ -598,6 +600,17 @@ namespace course_work
                 MessageBox.Show("Неправильна відповідь!");
                 progresJson.AddValueToKey("string_test_1_bad", 1);
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(3);
+            beginning_statistic_progressBar.Value = progresJson.GetValueByKey("beginning_test_0_good") * 100 / (progresJson.GetValueByKey("beginning_test_0_good") + progresJson.GetValueByKey("beginning_test_0_bad"));
+            beginning_statistic_progressBar2.Value = progresJson.GetValueByKey("beginning_test_1_good") * 100 / (progresJson.GetValueByKey("beginning_test_1_good") + progresJson.GetValueByKey("beginning_test_1_bad"));
+            variable_statistic_progressBar.Value = progresJson.GetValueByKey("variable_test_0_good") * 100 / (progresJson.GetValueByKey("variable_test_0_good") + progresJson.GetValueByKey("variable_test_0_bad"));
+            variable_statistic_progressBar2.Value = progresJson.GetValueByKey("variable_test_1_good") * 100 / (progresJson.GetValueByKey("variable_test_1_good") + progresJson.GetValueByKey("variable_test_1_bad"));
+            string_statistic_progressBar.Value = progresJson.GetValueByKey("string_test_0_good") * 100 / (progresJson.GetValueByKey("string_test_0_good") + progresJson.GetValueByKey("string_test_0_bad"));
+            string_statistic_progressBar2.Value = progresJson.GetValueByKey("string_test_1_good") * 100 / (progresJson.GetValueByKey("string_test_1_good") + progresJson.GetValueByKey("string_test_1_bad"));
         }
     }
 }
