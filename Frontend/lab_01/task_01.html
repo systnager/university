@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акордеон меню</title>
+    <style>
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        label {
+            display: block;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 5px;
+            transition: background-color 0.3s;
+        }
+
+        label:hover {
+            background-color: #0056b3;
+        }
+
+        div {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 10px;
+            transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+        }
+
+        label input[type="radio"]:checked + div {
+            max-height: 200px;
+            padding: 10px;
+        }
+
+        div p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Акордеон-меню</h1>
+
+<label>
+    Секція 1
+    <input type="radio" name="accordion">
+    <div>
+        <p>Це вміст першої секції</p>
+    </div>
+</label>
+
+<label>
+    Секція 2
+    <input type="radio" name="accordion">
+    <div>
+        <p>Це вміст другої секції</p>
+    </div>
+</label>
+
+<label>
+    Секція 3
+    <input type="radio" name="accordion">
+    <div>
+        <p>Це вміст третьої секції</p>
+    </div>
+</label>
+</body>
+</html>

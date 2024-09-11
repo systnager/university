@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма</title>
+  <style>
+    body {
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+    }
+
+    label, input, text {
+      display: block;
+      margin: 10px 0;
+    }
+
+    text {
+      color: red;
+    }
+
+    button {
+      width: 200px;
+      height: 50px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input {
+      width: 300px;
+      height: 30px;
+      border-radius: 3px;
+      border: 3px solid #4CAF50;
+    }
+
+    input:placeholder-shown {
+      border-color: #f44336;
+    }
+
+    input:placeholder-shown + text {
+      display: block;
+    }
+
+    input:not(:placeholder-shown) {
+      border-color: #4CAF50;
+    }
+
+    input:not(:placeholder-shown) + text {
+      display: none;
+    }
+
+    input[type="email"]:invalid {
+      border-color: #f44336;
+    }
+
+    input[type="email"]:invalid + text {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>Форма реєстрації</h1>
+<form>
+  <label>Введіть ім'я користувача:
+    <input type="text" placeholder="username" required>
+    <text>Поле обов'язкове для заповнення</text>
+  </label><br>
+  <label>Адреса електронної пошти:
+    <input type="email" placeholder="example@mail.com" required>
+    <text>Поле обов'язкове для заповнення</text>
+  </label><br>
+  <label>Пароль:
+    <input type="password" placeholder="password" required>
+    <text>Поле обов'язкове для заповнення</text>
+  </label><br>
+  <button type="submit">Зареєстуватись</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список</title>
+    <style>
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        label {
+            display: block;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 5px;
+            transition: background-color 0.3s;
+        }
+
+        label:hover {
+            background-color: #0056b3;
+        }
+
+        div {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 10px;
+            transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+        }
+
+        label input[type="radio"]:checked + div {
+            max-height: 500px;
+            padding: 10px;
+        }
+
+        div p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Список</h1>
+
+<ul>
+    <li>
+        <label>
+            1
+            <input type="radio" name="a1">
+            <div>
+                <ul>
+                    <li>
+                        <label>
+                            1.1
+                            <input type="radio" name="a2">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            1.1.1
+                                            <input type="radio" name="a3">
+                                            <div>
+                                                <p>Це вміст секції</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            1.1.2
+                                            <input type="radio" name="a3">
+                                            <div>
+                                                <p>Це вміст секції</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            1.2
+                            <input type="radio" name="a2">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            1.2.1
+                                            <input type="radio" name="a5">
+                                            <div>
+                                                <p>Це вміст секції</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            1.2.2
+                                            <input type="radio" name="a5">
+                                            <div>
+                                                <p>Це вміст секції</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </label>
+    </li>
+    <li>
+        <label>
+            2
+            <input type="radio" name="a1">
+            <div>
+                <ul>
+                    <li>
+                        <label>
+                            2.1
+                            <input type="radio" name="a6">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            2.1.1
+                                            <input type="radio" name="a7">
+                                            <div>
+                                                <p>Це вміст секції</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            2.1.2
+                                            <input type="radio" name="a7">
+                                            <div>
+                                                <p>Це вміст секції</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            2.2
+                            <input type="radio" name="a6">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            2.2.1
+                                            <input type="radio" name="a7">
+                                            <div>
+                                                <p>Це вміст секції</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            2.2.2
+                                            <input type="radio" name="a7">
+                                            <div>
+                                                <p>Це вміст секції</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </label>
+    </li>
+</ul>
+</body>
+</html>
