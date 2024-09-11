@@ -1,0 +1,14 @@
+.selected {
+    background-color: yellow;
+}
+
+
+div.tb-e {
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+
+td {
+    border: 1px solid #000;
+}
