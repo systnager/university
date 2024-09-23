@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 03</title>
+</head>
+<body>
+<script>
+  let matrix = [
+    [1, 2, 3, 0, -1],
+    [4, 5, 6, 0, 7],
+    [0, 1, 2, 3, 4],
+    [-1, -2, 0, 1, 0],
+    [5, 5, 5, 5, 5],
+    [2, 3, 4, 0, 6],
+    [7, 0, 8, 9, 10]
+  ];
+
+  let positiveCount = 0;
+  let noZeroRowsCount = 0;
+  let zeroColsCount = 0;
+  let longestSeriesRow = -1;
+  let longestSeriesLength = 0;
+  let rowProducts = [];
+  let colSumPositive = [];
+  let colSumNegative = [];
+  let transposeMatrix = [];
+
+  matrix.forEach(row => {
+    row.forEach(el => {
+      if (el > 0) positiveCount++;
+    });
+  });
+
+  matrix.forEach(row => {
+    if (!row.includes(0)) {
+      noZeroRowsCount++;
+    }
+  });
+
+  let colsCount = matrix[0].length;
+  for (let col = 0; col < colsCount; col++) {
+    let hasZero = false;
+    for (let row = 0; row < matrix.length; row++) {
+      if (matrix[row][col] === 0) {
+        hasZero = true;
+        break;
+      }
+    }
+    if (hasZero) zeroColsCount++;
+  }
+
+  matrix.forEach((row, rowIndex) => {
+    let currentSeriesLength = 1;
+    let maxSeriesLength = 1;
+    for (let i = 1; i < row.length; i++) {
+      if (row[i] === row[i - 1]) {
+        currentSeriesLength++;
+      } else {
+        maxSeriesLength = Math.max(maxSeriesLength, currentSeriesLength);
+        currentSeriesLength = 1;
+      }
+    }
+    maxSeriesLength = Math.max(maxSeriesLength, currentSeriesLength);
+    if (maxSeriesLength > longestSeriesLength) {
+      longestSeriesLength = maxSeriesLength;
+      longestSeriesRow = rowIndex + 1;
+    }
+  });
+
+  matrix.forEach(row => {
+    if (row.every(el => el >= 0)) {
+      let product = row.reduce((acc, el) => acc * el, 1);
+      rowProducts.push(product);
+    }
+  });
+
+  for (let col = 0; col < colsCount; col++) {
+    let sumPositive = 0;
+    let sumNegative = 0;
+    let hasNegative = false;
+
+    for (let row = 0; row < matrix.length; row++) {
+      if (matrix[row][col] >= 0) {
+        sumPositive += matrix[row][col];
+      } else {
+        hasNegative = true;
+        sumNegative += matrix[row][col];
+      }
+    }
+
+    if (!hasNegative) {
+      colSumPositive.push(sumPositive);
+    } else {
+      colSumNegative.push(sumNegative + sumPositive);
+    }
+  }
+
+  for (let col = 0; col < colsCount; col++) {
+    let newRow = [];
+    for (let row = 0; row < matrix.length; row++) {
+      newRow.push(matrix[row][col]);
+    }
+    transposeMatrix.push(newRow);
+  }
+
+  console.log(`Кількість додатних елементів: ${positiveCount}`);
+  console.log(`Кількість рядків без нульових елементів: ${noZeroRowsCount}`);
+  console.log(`Кількість стовпців з хоча б одним нульовим елементом: ${zeroColsCount}`);
+  console.log(`Номер рядка з найдовшою серією однакових елементів: ${longestSeriesRow}`);
+  console.log(`Добуток елементів в рядках без від'ємних елементів: ${rowProducts}`);
+  console.log(`Сума елементів в стовпцях без від'ємних елементів: ${colSumPositive}`);
+  console.log(`Сума елементів в стовпцях з від'ємними елементами: ${colSumNegative}`);
+  console.log('Транспонована матриця:');
+  console.table(transposeMatrix);
+</script>
+</body>
+</html>
