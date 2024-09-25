@@ -1,0 +1,36 @@
+.accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.accordion-item {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+}
+.accordion-header {
+    display: flex;
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+    justify-content: space-between;
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    transition: max-height 0.5s;
+}
+.accordion-content.open {
+    padding: 10px;
+    max-height: 500px;
+}
+
+.accordion-sym::before {
+    display: inline-block;
+    content: '+';
+}
+
+.accordion-sym.open::before {
+    display: inline-block;
+    content: '-';
+}
