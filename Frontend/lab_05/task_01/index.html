@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_01</title>
+</head>
+<body>
+    <h3>Оберіть варіанти:</h3>
+    <label><input type="checkbox" value="Опція 1"> Опція 1</label><br>
+    <label><input type="checkbox" value="Опція 2"> Опція 2</label><br>
+    <label><input type="checkbox" value="Опція 3"> Опція 3</label><br>
+    <button id="submitBtn">Вивести вибрані опції</button>
+    <p id="result"></p>
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const selectedValues = [];
+
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    selectedValues.push(checkbox.value);
+                }
+            });
+
+            document.getElementById('result').innerText = 'Вибрані опції: ' + selectedValues.join(', ');
+        });
+    </script>
+</body>
+</html>

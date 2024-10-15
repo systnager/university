@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_02</title>
+    <style>
+        #selectedEmails {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Оберіть електронні адреси:</h3>
+    <label><input type="checkbox" value="example1@example.com" onchange="updateEmails(this)"> example1@example.com</label><br>
+    <label><input type="checkbox" value="example2@example.com" onchange="updateEmails(this)"> example2@example.com</label><br>
+    <label><input type="checkbox" value="example3@example.com" onchange="updateEmails(this)"> example3@example.com</label><br>
+
+    <h4>Вибрані електронні адреси:</h4>
+    <div id="selectedEmails"></div>
+
+    <script>
+        function updateEmails(checkbox) {
+            const emailDisplay = document.getElementById('selectedEmails');
+            const emailValue = checkbox.value;
+
+            if (checkbox.checked) {
+                emailDisplay.innerHTML += emailValue + '<br>';
+            } else {
+                emailDisplay.innerHTML = emailDisplay.innerHTML.replace(emailValue + '<br>', '');
+            }
+        }
+    </script>
+</body>
+</html>

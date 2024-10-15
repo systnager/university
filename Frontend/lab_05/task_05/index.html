@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_05</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 150px);
+            gap: 10px;
+        }
+        .image {
+            width: 150px;
+            height: 150px;
+            background-image: url('04.jpg');
+            background-size: cover;
+            filter: grayscale(100%);
+            opacity: 0.5;
+            cursor: pointer;
+            transition: filter 0.2s, opacity 0.2s;
+        }
+        .active {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Галерея зображень</h1>
+<div class="gallery">
+    <div class="image" onclick="toggleImage(this)"></div>
+    <div class="image" onclick="toggleImage(this)"></div>
+    <div class="image" onclick="toggleImage(this)"></div>
+    <div class="image" onclick="toggleImage(this)"></div>
+</div>
+
+<script>
+    function toggleImage(element) {
+        element.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>

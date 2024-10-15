@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_04</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #question {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Перевірте свої знання таблиці множення!</h1>
+
+<div id="score">Загальний рахунок: 0</div>
+<div id="question" class="hidden"></div>
+
+<div id="options" class="hidden">
+    <input type="text" id="userAnswer" placeholder="Введіть відповідь" />
+    <button id="checkAnswer" class="hidden">Перевірити відповідь</button>
+</div>
+
+<button id="nextTask" class="hidden">Наступне завдання</button>
+<div id="result"></div>
+
+<script>
+    let score = 0;
+    let currentTask;
+
+    function generateTask() {
+        const num1 = Math.floor(Math.random() * 9) + 1;
+        const num2 = Math.floor(Math.random() * 9) + 1;
+        currentTask = { num1, num2, answer: num1 * num2 };
+
+        document.getElementById('question').textContent = `Скільки буде ${num1} × ${num2}?`;
+        document.getElementById('question').classList.remove('hidden');
+        document.getElementById('options').classList.remove('hidden');
+        document.getElementById('nextTask').classList.add('hidden');
+        document.getElementById('result').textContent = '';
+        document.getElementById('checkAnswer').classList.remove('hidden');
+        document.getElementById('userAnswer').value = '';
+        document.getElementById('userAnswer').focus();
+    }
+
+    document.getElementById('checkAnswer').onclick = function() {
+        const userAnswer = document.getElementById('userAnswer').value.trim();
+
+        if (userAnswer === '') {
+            alert('Будь ласка, введіть відповідь!');
+            return;
+        }
+
+        const parsedAnswer = parseInt(userAnswer);
+
+        if (isNaN(parsedAnswer)) {
+            alert('Будь ласка, введіть коректне число!');
+            return;
+        }
+
+        if (parsedAnswer === currentTask.answer) {
+            score++;
+            document.getElementById('result').textContent = 'Правильно!';
+        } else {
+            document.getElementById('result').textContent = `Неправильно! Правильна відповідь: ${currentTask.answer}`;
+        }
+
+        document.getElementById('score').textContent = `Загальний рахунок: ${score}`;
+        document.getElementById('checkAnswer').classList.add('hidden');
+        document.getElementById('nextTask').classList.remove('hidden');
+        document.getElementById('userAnswer').disabled = true;
+    };
+
+    document.getElementById('nextTask').onclick = function() {
+        document.getElementById('userAnswer').disabled = false;
+        generateTask();
+    };
+
+    generateTask();
+</script>
+
+</body>
+</html>
