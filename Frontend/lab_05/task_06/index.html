@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_06</title>
+    <style>
+        .section {
+            border: 1px solid #555;
+            padding: 10px;
+            margin: 10px;
+            background-color: #ddd;
+        }
+
+        .section.active {
+            background-color: #337ab7;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #999;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <input type="text" placeholder="login" onfocus="setActive(this)" onblur="removeActive(this)">
+</div>
+
+<div class="section">
+    <input type="password" placeholder="password" onfocus="setActive(this)" onblur="removeActive(this)">
+</div>
+
+<div class="section">
+    <textarea placeholder="description" onfocus="setActive(this)" onblur="removeActive(this)"></textarea>
+</div>
+
+<script>
+    function setActive(element) {
+        element.parentElement.classList.add("active");
+    }
+
+    function removeActive(element) {
+        element.parentElement.classList.remove("active");
+    }
+</script>
+
+</body>
+</html>

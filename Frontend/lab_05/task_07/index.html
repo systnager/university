@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_07</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 70px;
+            text-align: right;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        .value {
+            display: inline-block;
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #337ab7;
+            margin-top: 20px;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <div>
+        <label for="width">width:</label>
+        <input type="range" id="width" min="0" max="100" value="100" oninput="updateBox()">
+        <span class="value" id="widthValue">100</span>
+    </div>
+    <div>
+        <label for="height">height:</label>
+        <input type="range" id="height" min="0" max="100" value="100" oninput="updateBox()">
+        <span class="value" id="heightValue">100</span>
+    </div>
+    <div>
+        <label for="rotate">rotate:</label>
+        <input type="range" id="rotate" min="0" max="360" value="0" oninput="updateBox()">
+        <span class="value" id="rotateValue">0</span>
+    </div>
+</div>
+
+<div id="box"></div>
+
+<script>
+    function updateBox() {
+        const width = document.getElementById('width').value;
+        const height = document.getElementById('height').value;
+        const rotate = document.getElementById('rotate').value;
+
+        document.getElementById('widthValue').textContent = width;
+        document.getElementById('heightValue').textContent = height;
+        document.getElementById('rotateValue').textContent = rotate;
+
+        const box = document.getElementById('box');
+        box.style.width = width + 'px';
+        box.style.height = height + 'px';
+        box.style.transform = `rotate(${rotate}deg)`;
+    }
+</script>
+</body>
+</html>

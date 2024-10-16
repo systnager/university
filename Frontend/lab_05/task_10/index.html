@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_10</title>
+    <style>
+        .slider-container {
+            position: relative;
+            width: 300px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider" id="slider">
+        <div class="slide"><img src="04.jpg" alt="Photo 1"></div>
+        <div class="slide"><img src="05.jpg" alt="Photo 2"></div>
+        <div class="slide"><img src="06.jpg" alt="Photo 3"></div>
+    </div>
+    <button class="nav-button prev" onclick="prevSlide()">&#10094;</button>
+    <button class="nav-button next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        if (index >= slides.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = slides.length - 1;
+        } else {
+            currentIndex = index;
+        }
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+</script>
+
+</body>
+</html>

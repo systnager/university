@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_08</title>
+    <style>
+        #img {
+            width: 200px;
+            height: 150px;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+<img id="img" src="04.jpg" alt="Image">
+<br>
+<button onclick="toggleImageSize()">Змінити розмір</button>
+
+<script>
+    let isOriginalSize = true;
+
+    function toggleImageSize() {
+        const image = document.getElementById('img');
+
+        if (isOriginalSize) {
+            image.style.width = (image.clientWidth * 2) + 'px';
+            image.style.height = (image.clientHeight * 2) + 'px';
+        } else {
+            image.style.width = (image.clientWidth / 2) + 'px';
+            image.style.height = (image.clientHeight / 2) + 'px';
+        }
+
+        isOriginalSize = !isOriginalSize;
+    }
+</script>
+</body>
+</html>
