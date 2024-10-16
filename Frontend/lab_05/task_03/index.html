@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_03</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #question {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Перевірте свої знання таблиці множення!</h1>
+
+<div id="score">Загальний рахунок: 0</div>
+<div id="question" class="hidden"></div>
+
+<div id="options" class="hidden">
+    <label><input type="radio" name="answer" value="0"> 0</label><br>
+    <label><input type="radio" name="answer" value="1"> 1</label><br>
+    <label><input type="radio" name="answer" value="2"> 2</label><br>
+    <label><input type="radio" name="answer" value="3"> 3</label><br>
+    <label><input type="radio" name="answer" value="4"> 4</label><br>
+    <label><input type="radio" name="answer" value="5"> 5</label><br>
+    <label><input type="radio" name="answer" value="6"> 6</label><br>
+    <label><input type="radio" name="answer" value="7"> 7</label><br>
+    <label><input type="radio" name="answer" value="8"> 8</label><br>
+    <label><input type="radio" name="answer" value="9"> 9</label><br>
+    <button id="checkAnswer" class="hidden">Перевірити відповідь</button>
+</div>
+
+<button id="nextTask" class="hidden">Наступне завдання</button>
+<div id="result"></div>
+
+<script>
+    let score = 0;
+    let currentTask;
+
+    function generateTask() {
+        const num1 = Math.floor(Math.random() * 9) + 1;
+        const num2 = Math.floor(Math.random() * 9) + 1;
+        currentTask = { num1, num2, answer: num1 * num2 };
+
+        document.getElementById('question').textContent = `Скільки буде ${num1} × ${num2}?`;
+        document.getElementById('question').classList.remove('hidden');
+        document.getElementById('options').classList.remove('hidden');
+        document.getElementById('nextTask').classList.add('hidden');
+        document.getElementById('result').textContent = '';
+        document.getElementById('checkAnswer').classList.remove('hidden');
+        resetOptions();
+    }
+
+    function resetOptions() {
+        const options = document.getElementsByName('answer');
+        options.forEach(option => {
+            option.checked = false;
+            option.disabled = false;
+        });
+        const correctAnswerIndex = Math.floor(Math.random() * 10);
+        options[correctAnswerIndex].value = currentTask.answer;
+        options[correctAnswerIndex].nextSibling.textContent = currentTask.answer;
+
+        for (let i = 0; i < options.length; i++) {
+            if (i !== correctAnswerIndex) {
+                options[i].value = Math.floor(Math.random() * 81);
+                options[i].nextSibling.textContent = options[i].value;
+            }
+        }
+    }
+
+    document.getElementById('checkAnswer').onclick = function() {
+        const selectedOption = document.querySelector('input[name="answer"]:checked');
+        if (selectedOption) {
+            if (parseInt(selectedOption.value) === currentTask.answer) {
+                score++;
+                document.getElementById('result').textContent = 'Правильно!';
+            } else {
+                document.getElementById('result').textContent = `Неправильно! Правильна відповідь: ${currentTask.answer}`;
+            }
+            document.getElementById('score').textContent = `Загальний рахунок: ${score}`;
+            document.getElementById('checkAnswer').classList.add('hidden');
+            document.getElementById('nextTask').classList.remove('hidden');
+            const options = document.getElementsByName('answer');
+            options.forEach(option => {
+                option.disabled = true;
+            });
+        } else {
+            alert('Будь ласка, оберіть відповідь!');
+        }
+    };
+
+    document.getElementById('nextTask').onclick = generateTask;
+    generateTask();
+</script>
+
+</body>
+</html>
