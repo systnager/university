@@ -13,3 +13,7 @@ C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.
 C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.pdb
 C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.genruntimeconfig.cache
 C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ref\ConsoleApp.dll
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\bin\Debug\net8.0\ClassLibrary.dll
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\bin\Debug\net8.0\ClassLibrary.pdb
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.csproj.Up2Date
