@@ -1,0 +1,15 @@
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\bin\Debug\net8.0\ConsoleApp.exe
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\bin\Debug\net8.0\ConsoleApp.deps.json
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\bin\Debug\net8.0\ConsoleApp.runtimeconfig.json
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\bin\Debug\net8.0\ConsoleApp.dll
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\bin\Debug\net8.0\ConsoleApp.pdb
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.AssemblyInfo.cs
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.sourcelink.json
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.dll
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\refint\ConsoleApp.dll
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.pdb
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ConsoleApp.genruntimeconfig.cache
+C:\Users\systn\Documents\university\DotNet\DotNetLab1\ConsoleApp\obj\Debug\net8.0\ref\ConsoleApp.dll
