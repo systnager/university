@@ -31,4 +31,17 @@ public class AutomatedTellerMachine
         account.Deposit(amount);
         CashAvailable += amount;
     }
+    
+    public void ProcessTransfer(Account sender, Account recipient, decimal amount)
+    {
+        if (sender.Balance >= amount)
+        {
+            sender.Withdraw(amount);
+            recipient.Deposit(amount);
+        }
+        else
+        {
+            throw new InvalidOperationException("Недостатньо коштів для переказу.");
+        }
+    }
 }
