@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_05</title>
+    <style>
+        #colorPalette {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .color {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.2s;
+        }
+        .color.selected {
+            border-color: black;
+        }
+        #canvas {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            grid-gap: 2px;
+        }
+        .square {
+            width: 40px;
+            height: 40px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div id="colorPalette">
+    <div class="color" data-color="#FF5733" onclick="selectColor('#FF5733')" style="background-color: #FF5733;"></div>
+    <div class="color" data-color="#33FF57" onclick="selectColor('#33FF57')" style="background-color: #33FF57;"></div>
+    <div class="color" data-color="#3357FF" onclick="selectColor('#3357FF')" style="background-color: #3357FF;"></div>
+    <div class="color" data-color="#FFD700" onclick="selectColor('#FFD700')" style="background-color: #FFD700;"></div>
+    <div class="color" data-color="#FF33A6" onclick="selectColor('#FF33A6')" style="background-color: #FF33A6;"></div>
+</div>
+
+<div id="canvas">
+</div>
+<script>
+    let selectedColor = null;
+    function selectColor(color) {
+        selectedColor = color;
+
+        document.querySelectorAll('.color').forEach(colorDiv => {
+            colorDiv.classList.remove('selected');
+        });
+        document.querySelector(`.color[data-color="${color}"]`).classList.add('selected');
+    }
+
+    const canvas = document.getElementById('canvas');
+    for (let i = 0; i < 100; i++) {
+        const square = document.createElement('div');
+        square.className = 'square';
+
+        square.onclick = function() {
+            if (selectedColor) {
+                square.style.backgroundColor = selectedColor;
+            }
+        };
+
+        canvas.appendChild(square);
+    }
+
+</script>
+</body>
+</html>

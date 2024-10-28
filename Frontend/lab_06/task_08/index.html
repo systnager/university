@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_08</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .book {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .book:hover {
+            background-color: #00bda1;
+        }
+        .active {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Список книг</h1>
+
+<div class="book" onclick="selectBook(this)">«Володар кілець» Джон Р. Р. Толкін</div>
+<div class="book" onclick="selectBook(this)">«Гордість і упередження» Джейн Остін</div>
+<div class="book" onclick="selectBook(this)">«Темні початки» Філіп Пулман</div>
+<div class="book" onclick="selectBook(this)">«Автостопом по галактиці» Дуглас Адамс</div>
+<div class="book" onclick="selectBook(this)">«Гаррі Поттер і Кубок вогню» Джоан Роулінг</div>
+<div class="book" onclick="selectBook(this)">«Вбити пересмішника» Харпер Лі</div>
+
+<script>
+    let activeBook = null;
+
+    function selectBook(bookElement) {
+        if (activeBook) {
+            activeBook.classList.remove('active');
+        }
+
+        activeBook = bookElement;
+        activeBook.classList.add('active');
+    }
+</script>
+
+</body>
+</html>

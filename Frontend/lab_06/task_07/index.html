@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_07</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #messageList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .message {
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .message h3 {
+            margin: 0 0 5px;
+            font-size: 1.1em;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            padding: 8px;
+            margin-bottom: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Форум</h1>
+
+<ul id="messageList">
+    <li class="message">
+        <h3>Автор: Іван</h3>
+        <p>Перше повідомлення</p>
+    </li>
+</ul>
+
+<h2>Додати нове повідомлення</h2>
+<form id="messageForm">
+    <input type="text" id="author" placeholder="Ваше ім'я" required>
+    <textarea id="content" rows="4" placeholder="Ваше повідомлення" required></textarea>
+    <button type="submit">Додати повідомлення</button>
+</form>
+
+<script>
+    document.getElementById('messageForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const author = document.getElementById('author').value;
+        const content = document.getElementById('content').value;
+
+        const newMessage = document.createElement('li');
+        newMessage.classList.add('message');
+
+        newMessage.innerHTML = `
+            <h3>Автор: ${author}</h3>
+            <p>${content}</p>
+        `;
+
+        document.getElementById('messageList').appendChild(newMessage);
+
+        document.getElementById('messageForm').reset();
+    });
+</script>
+</body>
+</html>

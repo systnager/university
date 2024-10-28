@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_04</title>
+    <style>
+        .text-block {
+            border: 1px solid #333;
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .text-content {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="text-block">
+    <p class="text-content">Lorem ipsum dolor sit amet...</p>
+    <button onclick="deleteBlock(this)">Видалити</button>
+    <button onclick="editBlock(this)">Редагувати</button>
+</div>
+<div class="text-block">
+    <p class="text-content">Lorem ipsum dolor sit amet...</p>
+    <button onclick="deleteBlock(this)">Видалити</button>
+    <button onclick="editBlock(this)">Редагувати</button>
+</div>
+<div class="text-block">
+    <p class="text-content">Lorem ipsum dolor sit amet...</p>
+    <button onclick="deleteBlock(this)">Видалити</button>
+    <button onclick="editBlock(this)">Редагувати</button>
+</div>
+<script>
+    function deleteBlock(button) {
+        const block = button.parentElement;
+        block.remove();
+    }
+
+    function editBlock(button) {
+        const block = button.parentElement;
+        const textContent = block.querySelector('.text-content');
+        const textarea = document.createElement('textarea');
+        textarea.value = textContent.innerText;
+        textarea.onblur = function() {
+            textContent.innerText = textarea.value;
+            textarea.remove();
+            textContent.style.display = 'block';
+        };
+
+        textContent.style.display = 'none';
+        block.insertBefore(textarea, textContent);
+        textarea.focus();
+    }
+
+</script>
+</body>
+</html>
