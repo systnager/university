@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_03</title>
+    <style>
+        #palette {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .color {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: border 0.2s;
+        }
+        .color.selected {
+            border-color: black;
+        }
+        #rectangle {
+            width: 300px;
+            height: 150px;
+            border: 1px solid #333;
+        }
+
+    </style>
+</head>
+<body>
+<div id="palette">
+    <div class="color" data-color="#FF5733" style="background-color: #FF5733;" onclick="toggleColor('#FF5733')"></div>
+    <div class="color" data-color="#33FF57" style="background-color: #33FF57;" onclick="toggleColor('#33FF57')"></div>
+    <div class="color" data-color="#3357FF" style="background-color: #3357FF;" onclick="toggleColor('#3357FF')"></div>
+    <div class="color" data-color="#FFD700" style="background-color: #FFD700;" onclick="toggleColor('#FFD700')"></div>
+    <div class="color" data-color="#FF33A6" style="background-color: #FF33A6;" onclick="toggleColor('#FF33A6')"></div>
+</div>
+<div id="rectangle"></div>
+<script>
+    const selectedColors = new Set();
+
+    function toggleColor(color) {
+        const colorDiv = document.querySelector(`.color[data-color="${color}"]`);
+
+        if (selectedColors.has(color)) {
+            selectedColors.delete(color);
+            colorDiv.classList.remove('selected');
+        } else {
+            selectedColors.add(color);
+            colorDiv.classList.add('selected');
+        }
+
+        updateRectangleBackground();
+    }
+
+    function updateRectangleBackground() {
+        const rectangle = document.getElementById('rectangle');
+        const colorsArray = Array.from(selectedColors);
+
+        if (colorsArray.length === 0) {
+            rectangle.style.background = 'none';
+        } else if (colorsArray.length === 1) {
+            rectangle.style.background = colorsArray[0];
+        } else {
+            const gradient = `linear-gradient(to bottom, ${colorsArray.join(', ')})`;
+            rectangle.style.background = gradient;
+        }
+    }
+</script>
+</body>
+</html>

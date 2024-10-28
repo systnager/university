@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_01</title>
+    <style>
+        label, button {
+            display: block;
+            margin: 5px;
+        }
+
+        table, tr, td, th {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<label>First Name: <input type="text" name="fname"></label><br>
+<label>Last Name: <input type="text" name="lname"></label><br>
+<button onclick="add_user()">Add</button>
+<table id="table">
+    <tr>
+        <th>id</th>
+        <th>first name</th>
+        <th>last name</th>
+    </tr>
+</table>
+<script>
+    let user_count = 0;
+    let table = document.getElementById('table');
+
+    function add_user() {
+        let row = document.createElement('tr');
+        let fnametd = document.createElement('td');
+        let lnametd = document.createElement('td');
+        let idtd = document.createElement('td');
+        fnametd.innerText = document.querySelector('input[name="fname"]').value;
+        lnametd.innerText = document.querySelector('input[name="lname"]').value;
+        idtd.innerText = `${user_count++}`;
+        row.appendChild(idtd);
+        row.appendChild(fnametd);
+        row.appendChild(lnametd);
+        table.appendChild(row);
+    }
+</script>
+</body>
+</html>
