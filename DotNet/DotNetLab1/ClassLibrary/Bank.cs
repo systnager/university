@@ -30,6 +30,10 @@ public class Bank
 
     public void AddAccount(Account account)
     {
+        if (Accounts.Any(a => a.CardNumber == account.CardNumber))
+        {
+            throw new InvalidOperationException("Обліковий запис з таким номером картки вже існує.");
+        }
         Accounts.Add(account);
     }
 
